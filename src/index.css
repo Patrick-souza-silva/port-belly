@@ -1,0 +1,303 @@
+@import url('https://fonts.cdnfonts.com/css/walkway');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
+
+/* --- Brand Typography Design Tokens --- */
+:root {
+  /* Color Palette */
+  --primary: #510101; /* Official corporate Burgundy */
+  --primary-light: #7a1212;
+  --primary-dark: #350000;
+  
+  --secondary: #555555; /* Solid corporate slate gray */
+  --accent-gold: #c5a059; /* Champagne Gold highlight (sparingly used) */
+  --accent-gold-light: #dfc28d;
+  --accent-gold-dark: #a27e38;
+
+  --bg-light: #faf9f6; /* Ivory premium background */
+  --bg-dark: #0f0f0f; /* Off-black background for dark blocks */
+  --bg-white: #ffffff;
+  
+  --text-main: #1f1f1f;
+  --text-muted: #5e5e62;
+  --text-white: #ffffff;
+  --text-light-muted: #a1a1a6;
+
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.08);
+  
+  --glass-bg: rgba(255, 255, 255, 0.90);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shadow: rgba(0, 0, 0, 0.04) 0px 8px 32px 0px;
+
+  /* Font Families */
+  --font-primary: 'Walkway', 'Outfit', 'Montserrat', sans-serif;
+  --font-secondary: 'Walkway', 'Montserrat', sans-serif;
+
+  /* Layout and Spacing */
+  --max-width: 1280px;
+  --header-height: 80px;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+  
+  /* Shadows - Subtle and Professional */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.08);
+  
+  /* Borders - Sharp, architectural and precise */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+}
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root, .app-root-container, .main-content-area,
+.page-home, .page-about, .page-products, .page-models, .page-contact {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* Interactive Components styling */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: var(--text-white);
+  padding: 0.85rem 2rem;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(81, 1, 1, 0.25);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 0.8rem 2rem;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: var(--text-white);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(197, 160, 89, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Layout resets on #root for full page designs */
+#root {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* --- Premium Scroll Reveal Animation System --- */
+.reveal {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-fade-in-up {
+  transform: translateY(40px);
+}
+
+.reveal-fade-in-left {
+  transform: translateX(-45px);
+}
+
+.reveal-fade-in-right {
+  transform: translateX(45px);
+}
+
+.reveal-scale-up {
+  transform: scale(0.96);
+}
+
+/* Active states triggered by IntersectionObserver */
+.reveal.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Deluxe Progressive Delay System (for transitions) */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+.delay-700 { transition-delay: 700ms; }
+.delay-800 { transition-delay: 800ms; }
+
+/* Deluxe Animation Delay System (for standard keyframe animations) */
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
+.animate-delay-500 { animation-delay: 500ms; }

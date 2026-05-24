@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host & Sitemap
+Host: https://portabelly.com.br
+Sitemap: https://portabelly.com.br/sitemap.xml
