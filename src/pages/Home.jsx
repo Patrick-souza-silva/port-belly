@@ -24,19 +24,19 @@ export default function Home() {
 
   const highlightedProducts = [
     {
-      title: "Linha Belíssima Laminada",
-      desc: "Portas de alta sofisticação revestidas com lâminas naturais de Curupixá, Angelim, Tauari e Freijó.",
-      image: "/images/laminated-door.png"
+      title: "Kit BellyPlac",
+      desc: "Kit completo com folha HDF 3mm, batente e guarnição 100% HDF Ultra. Alta resistência à umidade, não amarela com o tempo.",
+      image: "/images/linhas/novos-modelos/BellyPlac-Branca.png"
     },
     {
-      title: "Linha Belíssima Maciça",
-      desc: "Portas maciças maciças e encorpadas, com máximo isolamento acústico e blindagem estrutural secular.",
-      image: "/images/solid-wood-door.png"
+      title: "Portas Frisadas",
+      desc: "Frisadas Curupixá com quadro em Pinus e chapa HDF. Pintura UV BELLYPLAC. Uso interno, múltiplas larguras disponíveis.",
+      image: "/images/linhas/novos-modelos/PortaFrisada-VR100.jpg"
     },
     {
-      title: "Kit Porta Pronta",
-      desc: "Solução integral com folha de porta, batente, guarnições e ferragens pré-ajustadas em fábrica.",
-      image: "/images/door-kit.png"
+      title: "Porta Lisa (Verniz)",
+      desc: "Lisa classe para verniz com capa de Curupixá, Tauari ou Ipê. Quadro em Pinus, contra-capa HDF e reforço para fechadura.",
+      image: "/images/linhas/novos-modelos/PortaCurupixa-class1.jpg"
     }
   ];
 
@@ -49,17 +49,22 @@ export default function Home() {
         <div className="container home-hero-container">
           <div className="home-hero-content animate-fade-in-up">
             <div className="home-hero-badge">
-              <span>Portas de Alta Costura Arquitetônica</span>
+              <span>Portábelly de portas abertas para o futuro</span>
             </div>
             <h1 className="home-hero-title">
-              A antiga Portas Alvorada agora é <span className="title-accent">PortáBelly</span>
+              Portas ALVORADA e Portábelly <span className="title-accent">uniram-se</span>
             </h1>
-            <p className="home-hero-desc">
-              Uma marca renascida com o mesmo padrão industrial inabalável e tradição de mais de 55 anos. Projetamos e fabricamos portas de altíssima qualidade em Renascença - PR para levar luxo, segurança e durabilidade aos seus projetos.
+            <p className="home-hero-desc hero-accent-lead">
+              e, agora estão mais fortes e preparadas para oferecer o que há de melhor na linha de portas internas.
             </p>
+            <div className="hero-quote-box">
+              <p className="hero-quote-text">
+                Juntando solidez e experiência de 58 anos de uma, mais a qualidade e sofisticação da outra, formaram uma das maiores e mais experientes indústria no ramo.
+              </p>
+            </div>
             <div className="home-hero-actions">
               <Link to="/produtos" className="btn-primary">
-                <span>Explorar Produtos</span>
+                <span>Ver Nossos Produtos</span>
                 <ArrowRight size={16} />
               </Link>
               <Link to="/contato" className="btn-secondary-light">
@@ -91,26 +96,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Brand Transition / History Segment */}
       <section className="home-transition-teaser">
         <div className="container teaser-container">
           <div className="teaser-graphics reveal reveal-fade-in-left">
             <div className="teaser-frame">
-              <img src="/images/laminated-door.png" alt="Produção PortáBelly" className="teaser-img" />
+              <img src="/images/logos/logo.png" alt="Logo Portábelly" className="teaser-img" style={{objectFit: 'contain', background: '#faf8f5', padding: '2rem'}} />
               <div className="teaser-badge">
-                <span className="teaser-badge-num">55+</span>
+                <span className="teaser-badge-num">58+</span>
                 <span className="teaser-badge-label">Anos de Tradição</span>
               </div>
             </div>
           </div>
           <div className="teaser-content reveal reveal-fade-in-right">
-            <span className="teaser-tag">SOBRE NÓS</span>
-            <h2 className="teaser-title">Uma Nova Assinatura, a Mesma Tradição Inabalável</h2>
+            <span className="teaser-tag">NOSSA HISTÓRIA</span>
+            <h2 className="teaser-title">Portábelly Indústria de Portas vem renovada</h2>
             <p className="teaser-text">
-              Com mais de meio século de história em Renascença, no Sudoeste do Paraná, a Portas Alvorada consolidou-se como sinônimo de esquadrias robustas e de design elegante. Para marcar um novo ciclo de expansão técnica e modernização fabril, agora somos <strong>PortáBelly</strong>.
+              Com sucesso consolidado e, principalmente, mantém a origem e princípios familiar.
             </p>
             <p className="teaser-text">
-              Investimos em tecnologia de ponta, acabamento ultra-refinado e nobreza de materiais para continuar abrindo caminhos e integrando beleza e funcionalidade aos melhores lares do Brasil.
+              Seja você também um parceiro dessa união de sucesso. Renovação e parceria será nossa maior força para continuarmos crescendo juntos.
             </p>
             <Link to="/sobre" className="teaser-link-btn">
               <span>Conhecer Nossa História</span>
@@ -137,7 +141,6 @@ export default function Home() {
               <div className={`teaser-product-card reveal reveal-scale-up delay-${(idx + 1) * 100}`} key={idx}>
                 <div className="teaser-product-img-wrapper">
                   <img src={prod.image} alt={prod.title} className="teaser-product-img" />
-                  <div className="teaser-product-overlay"></div>
                 </div>
                 <div className="teaser-product-body">
                   <h3 className="teaser-product-card-title">{prod.title}</h3>
@@ -268,11 +271,35 @@ export default function Home() {
           -webkit-text-fill-color: transparent;
         }
 
-        .home-hero-desc {
-          font-size: clamp(1rem, 2vw, 1.2rem);
+        .hero-accent-lead {
+          font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+          font-weight: 600;
+          color: var(--accent-gold-light);
+          line-height: 1.5;
+          margin-bottom: 1.5rem;
+          font-family: var(--font-secondary);
+          letter-spacing: 0.02em;
+        }
+
+        .hero-quote-box {
+          border-left: 3px solid var(--accent-gold);
+          padding-left: 1.75rem;
+          margin-top: 1.5rem;
+          margin-bottom: 3.25rem;
+          background: rgba(255, 255, 255, 0.02);
+          backdrop-filter: blur(5px);
+          padding-top: 0.85rem;
+          padding-bottom: 0.85rem;
+          padding-right: 1.25rem;
+          border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .hero-quote-text {
+          font-size: clamp(0.92rem, 1.8vw, 1.05rem);
           color: var(--text-light-muted);
           line-height: 1.7;
-          margin-bottom: 2.5rem;
+          font-style: italic;
+          margin: 0 !important;
         }
 
         .home-hero-actions {
@@ -546,27 +573,43 @@ export default function Home() {
           border-radius: var(--radius-lg);
           overflow: hidden;
           box-shadow: var(--shadow-sm);
+          display: flex;
+          flex-direction: column;
+          transition: var(--transition-smooth);
+        }
+
+        .teaser-product-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-lg);
+          border-color: rgba(197, 160, 89, 0.3);
         }
 
         .teaser-product-img-wrapper {
           position: relative;
-          height: 220px;
+          width: 100%;
+          height: 280px;
           overflow: hidden;
+          background: linear-gradient(160deg, #f5f2ee 0%, #ede8e0 50%, #e8e2d8 100%);
+          border-bottom: 1px solid var(--border-light);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .teaser-product-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          max-width: 75%;
+          max-height: 250px;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+          display: block;
+          transition: var(--transition-smooth);
+          filter: drop-shadow(0 8px 24px rgba(0,0,0,0.18));
         }
 
-        .teaser-product-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(to bottom, rgba(81, 1, 1, 0.05), rgba(81, 1, 1, 0.35));
+        .teaser-product-card:hover .teaser-product-img {
+          transform: scale(1.06) translateY(-4px);
+          filter: drop-shadow(0 16px 32px rgba(0,0,0,0.22));
         }
 
         .teaser-product-body {

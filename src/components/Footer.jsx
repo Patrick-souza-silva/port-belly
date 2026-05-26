@@ -17,14 +17,10 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="footer-col brand-col">
             <div className="footer-logo-box">
-              <img src="/logo.png" alt="PortáBelly Logo" className="footer-logo-img" />
-              <div className="footer-logo-names">
-                <span className="footer-logo-main">PortáBelly</span>
-                <span className="footer-logo-sub">Fábrica de Portas</span>
-              </div>
+              <img src="/images/logos/logo-branca.png" alt="Portábelly Indústria de Portas" className="footer-logo-img-large" />
             </div>
             <p className="footer-brand-desc">
-              Mais de 55 anos de experiência transformando a nobreza da madeira em esquadrias de alta costura arquitetônica. Projetadas no Paraná, entregues em todo o Brasil.
+              Mais de 55 anos de experiência transformando a nobreza da madeira em esquadrias de alto padrão. Projetadas no Paraná, entregues em todo o Brasil.
             </p>
             <div className="footer-social-links">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Siga-nos no Instagram">
@@ -43,7 +39,6 @@ export default function Footer() {
               <li><Link to="/">Início</Link></li>
               <li><Link to="/sobre">Sobre Nós</Link></li>
               <li><Link to="/produtos">Produtos</Link></li>
-              <li><Link to="/modelos">Modelos & Coleções</Link></li>
               <li><Link to="/contato">Contato Fábrica</Link></li>
             </ul>
           </div>
@@ -52,11 +47,11 @@ export default function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">Nossos Produtos</h4>
             <ul className="footer-links-list">
-              <li><Link to="/produtos#laminada">Linha Belíssima Laminada</Link></li>
-              <li><Link to="/produtos#macica">Linha Belíssima Maciça</Link></li>
-              <li><Link to="/produtos#kit">Kit Porta Pronta</Link></li>
-              <li><Link to="/produtos#acabamentos">Rodapés & Acabamentos</Link></li>
-              <li><Link to="/produtos">Projetos Especiais</Link></li>
+              <li><Link to="/produtos">Kit BellyPlac</Link></li>
+              <li><Link to="/produtos">Portas Frisadas</Link></li>
+              <li><Link to="/produtos">Portas Lisas (Verniz)</Link></li>
+              <li><Link to="/produtos">Portas Semi-Ocas</Link></li>
+              <li><Link to="/produtos">Portas Camarão / Sólidas</Link></li>
             </ul>
           </div>
 
@@ -135,12 +130,11 @@ export default function Footer() {
           gap: 0.75rem;
         }
 
-        .footer-logo-img {
-          height: 64px;
-          border-radius: var(--radius-sm);
+        .footer-logo-img-large {
+          height: 75px;
+          width: auto;
           object-fit: contain;
-          border: 1px solid rgba(255, 255, 255, 0.15);
-          background-color: var(--bg-white);
+          transition: var(--transition-smooth);
         }
 
         .footer-logo-names {

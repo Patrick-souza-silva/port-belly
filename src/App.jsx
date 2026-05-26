@@ -7,9 +7,9 @@ import ScrollToTop from './components/ScrollToTop';
 
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
-import ProductsPage from './pages/ProductsPage';
+
 import ContactPage from './pages/ContactPage';
-import ModelsPage from './pages/ModelsPage';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
 
@@ -28,8 +28,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre" element={<AboutPage />} />
+
             <Route path="/produtos" element={<ProductsPage />} />
-            <Route path="/modelos" element={<ModelsPage />} />
             <Route path="/contato" element={<ContactPage />} />
           </Routes>
         </main>

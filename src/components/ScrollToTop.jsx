@@ -19,12 +19,8 @@ export default function ScrollToTop() {
         pageDesc = "Conheça a história e tradição de mais de 55 anos da PortáBelly na fabricação de portas de madeira de reflorestamento em Renascença, Pato Branco e Francisco Beltrão.";
         break;
       case '/produtos':
-        pageTitle = "Produtos & Portas de Madeira - PortáBelly | Fábrica de Portas";
-        pageDesc = "Explore nossos produtos: Linha Belíssima Laminada, Linha Maciça Cedro Arana e o exclusivo Kit Porta Pronta. Portas prontas para Pato Branco, Francisco Beltrão e região.";
-        break;
-      case '/modelos':
-        pageTitle = "Catálogo com 44 Modelos de Portas - PortáBelly | Fábrica de Portas";
-        pageDesc = "Conheça nossos modelos de portas como Belly 01, Inovatta 800, Madeira EX-708, contemporâneas e mais. Solicite orçamentos diretos de fábrica para sua obra.";
+        pageTitle = "Produtos & Portas de Madeira - Portábelly | Indústria de Portas";
+        pageDesc = "Conheça nossas novas linhas de portas de madeira de alto padrão: Kit BellyPlac, portas frisadas, lisas para verniz, semi-ocas e camarão. Solicite orçamentos direto de fábrica.";
         break;
       case '/contato':
         pageTitle = "Fale Conosco e Orçamentos - PortáBelly | Fábrica de Portas";
