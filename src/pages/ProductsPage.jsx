@@ -24,7 +24,6 @@ export default function ProductsPage() {
       case 'frisada':
         return {
           composicao: "Quadro em Pinus com enchimento interno e chapa HDF",
-          material: "Chapa HDF com pintura UV BELLYPLAC: mogno, angelim e imbuia. Contém fita de borda e embalagem",
           enchimento: "Opções: colmeia, sarrafo ou sólida",
           acabamento: "Pintura UV BELLYPLAC em branco, mogno, angelim e imbuia",
           especificacoes: "Portas exclusivas para uso interno. Não pode ser pintada com fundo ou tinta a base de água. Não podem sofrer alterações em suas medidas.",
@@ -69,48 +68,6 @@ export default function ProductsPage() {
 
   // Modelos reais da empresa com imagens atualizadas
   const doorModels = useMemo(() => [
-    // --- KIT BELLYPLAC (4 modelos) ---
-    {
-      id: "bellyplac-branca",
-      name: "BellyPlac Branca",
-      code: "BELLYPLAC-BRANCA",
-      line: "bellyplac",
-      lineLabel: "Kit BellyPlac",
-      image: "/images/linhas/novos-modelos/BellyPlac-Branca.png",
-      description: "Folha em HDF 3mm com enchimento em colmeia, acabamento branco lacado e branco fosco UV. Batente e guarnição 100% HDF Ultra recobertos com PET.",
-      specs: ["HDF 3mm com Colmeia", "Branco Lacado / Fosco UV", "Batente HDF Ultra + PET"]
-    },
-    {
-      id: "bellyplac-mogno",
-      name: "BellyPlac Mogno",
-      code: "BELLYPLAC-MOGNO",
-      line: "bellyplac",
-      lineLabel: "Kit BellyPlac",
-      image: "/images/linhas/novos-modelos/BellyPlac-Mogno.png",
-      description: "Folha HDF 3mm na cor mogno com pintura UV BELLYPLAC. Batente e guarnição 100% HDF Ultra com papel melamínico mogno. Kit com furação reversível.",
-      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Mogno", "Batente HDF Ultra Melamínico"]
-    },
-    {
-      id: "bellyplac-angelim",
-      name: "BellyPlac Angelim",
-      code: "BELLYPLAC-ANGELIM",
-      line: "bellyplac",
-      lineLabel: "Kit BellyPlac",
-      image: "/images/linhas/novos-modelos/BellyPlac-Angelim.jpg",
-      description: "Folha HDF 3mm cor angelim com pintura UV BELLYPLAC. Batente e guarnição 100% HDF Ultra. Alta resistência à umidade, não amarela com o tempo.",
-      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Angelim", "Resistente à Umidade"]
-    },
-    {
-      id: "bellyplac-imbuia",
-      name: "BellyPlac Imbuia Quartier",
-      code: "BELLYPLAC-IMBUIA",
-      line: "bellyplac",
-      lineLabel: "Kit BellyPlac",
-      image: "/images/linhas/novos-modelos/BellyPlac-ImbuiaQuartier.jpg",
-      description: "Folha HDF 3mm cor imbuia quartier com pintura UV BELLYPLAC. Guarnição com regulagem de 0,50cm para um lado e 3cm para o outro.",
-      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Imbuia", "Guarnição Regulável"]
-    },
-
     // --- PORTA FRISADA BELLYPLAC (7 modelos VR) ---
     {
       id: "frisada-vr100",
@@ -196,7 +153,7 @@ export default function ProductsPage() {
     },
     {
       id: "lisa-curupixa-2",
-      name: "Lisa Curupixá Class II",
+      name: "Porta Curupixa Comercial",
       code: "LISA-CURUPIXA-2",
       line: "lisa",
       lineLabel: "Porta Lisa (Verniz)",
@@ -217,16 +174,80 @@ export default function ProductsPage() {
       specs: ["Quadro em Pinus", "Estrutura Sarrafeada", "Capa Virola/Amescla"]
     },
 
-    // --- PORTA CAMARÃO PARA VERNIZ (1 modelo) ---
+    // --- PORTA SÓLIDA ---
     {
-      id: "camarao-verniz",
+      id: "solida-curupixa",
+      name: "Porta Sólida",
+      code: "SOLIDA-CURUPIXA",
+      line: "solida",
+      lineLabel: "Porta Sólida",
+      image: "/images/linhas/novos-modelos/PortaSolida.jpg",
+      description: "Porta sólida com quadro em Pinus e laminada faqueada. Enchimento sarrafo e compensado com contra-capa torneada. Filete nas bordas. Capas disponíveis: Curupixá, Tauari e Ipê.",
+      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
+    },
+
+    // --- PORTA CAMARÃO PARA VERNIZ (disponível em Lisa e Sólida) ---
+    {
+      id: "camarao-verniz-lisa",
       name: "Porta Camarão (Verniz)",
       code: "CAMARAO-VERNIZ",
-      line: "solida",
-      lineLabel: "Porta Camarão",
+      line: "lisa",
+      lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaSolida.jpg",
       description: "Porta Camarão para verniz com laminada faqueada e contra-capa torneada. Quadro em Pinus, enchimento sarrafo e compensado, filete nas bordas. Capas: Curupixá, Tauari e Ipê.",
       specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
+    },
+    {
+      id: "camarao-verniz-solida",
+      name: "Porta Camarão (Verniz)",
+      code: "CAMARAO-VERNIZ",
+      line: "solida",
+      lineLabel: "Porta Sólida",
+      image: "/images/linhas/novos-modelos/PortaSolida.jpg",
+      description: "Porta Camarão para verniz com laminada faqueada e contra-capa torneada. Quadro em Pinus, enchimento sarrafo e compensado, filete nas bordas. Capas: Curupixá, Tauari e Ipê.",
+      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
+    },
+
+    // --- BELLYPLAC (4 modelos) ---
+    {
+      id: "bellyplac-branca",
+      name: "BellyPlac Branca",
+      code: "BELLYPLAC-BRANCA",
+      line: "bellyplac",
+      lineLabel: "Bellyplac",
+      image: "/images/linhas/novos-modelos/BellyPlac-Branca.png",
+      description: "Folha em HDF 3mm com enchimento em colmeia, acabamento branco lacado e branco fosco UV. Batente e guarnição 100% HDF Ultra recobertos com PET.",
+      specs: ["HDF 3mm com Colmeia", "Branco Lacado / Fosco UV", "Batente HDF Ultra + PET"]
+    },
+    {
+      id: "bellyplac-mogno",
+      name: "BellyPlac Mogno",
+      code: "BELLYPLAC-MOGNO",
+      line: "bellyplac",
+      lineLabel: "Bellyplac",
+      image: "/images/linhas/novos-modelos/BellyPlac-Mogno.png",
+      description: "Folha HDF 3mm na cor mogno com pintura UV BELLYPLAC. Batente e guarnição 100% HDF Ultra com papel melamínico mogno. Kit com furação reversível.",
+      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Mogno", "Batente HDF Ultra Melamínico"]
+    },
+    {
+      id: "bellyplac-angelim",
+      name: "BellyPlac Angelim",
+      code: "BELLYPLAC-ANGELIM",
+      line: "bellyplac",
+      lineLabel: "Bellyplac",
+      image: "/images/linhas/novos-modelos/BellyPlac-Angelim.jpg",
+      description: "Folha HDF 3mm cor angelim com pintura UV BELLYPLAC. Batente e guarnição 100% HDF Ultra. Alta resistência à umidade, não amarela com o tempo.",
+      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Angelim", "Resistente à Umidade"]
+    },
+    {
+      id: "bellyplac-imbuia",
+      name: "BellyPlac Imbuia Quartier",
+      code: "BELLYPLAC-IMBUIA",
+      line: "bellyplac",
+      lineLabel: "Bellyplac",
+      image: "/images/linhas/novos-modelos/BellyPlac-ImbuiaQuartier.jpg",
+      description: "Folha HDF 3mm cor imbuia quartier com pintura UV BELLYPLAC. Guarnição com regulagem de 0,50cm para um lado e 3cm para o outro.",
+      specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Imbuia", "Guarnição Regulável"]
     },
   ], []);
 
@@ -268,7 +289,7 @@ export default function ProductsPage() {
             <span className="banner-subtitle">PORTFÓLIO COMPLETO</span>
             <h1 className="banner-title">Produtos & Linhas de Portas</h1>
             <p className="banner-lead">
-              Navegue interativamente por todas as nossas linhas industriais de portas de alto padrão. Filtre por modelo, busque itens específicos e solicite orçamentos diretos de fábrica.
+              Navegue interativamente por todas as nossas linhas industriais de Portas Internas. Filtre por modelo, busque itens específicos e solicite orçamentos diretos de fábrica.
             </p>
           </div>
         </div>
@@ -324,7 +345,7 @@ export default function ProductsPage() {
                 onClick={() => setSelectedLine('bellyplac')}
                 className={`filter-tab-btn ${selectedLine === 'bellyplac' ? 'active' : ''}`}
               >
-                <span>Kit BellyPlac</span>
+                <span>Bellyplac</span>
                 <span className="tab-count-badge">{counts.bellyplac}</span>
               </button>
               <button
