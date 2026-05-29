@@ -7,18 +7,18 @@ export default function Home() {
   const brandPillars = [
     {
       icon: <Award className="pillar-icon" size={28} />,
-      title: "Tradição Secular",
-      description: "Fundada em 1968 em Renascença - PR, unimos gerações de know-how na manipulação nobre de madeiras de alta qualidade."
+      title: "Qualidade da Madeira",
+      description: "Madeiras selecionadas e acabamentos de excelência. Produzimos portas cruas com matéria-prima de qualidade, garantindo resistência, estabilidade e ótimo acabamento para pintura ou verniz."
     },
     {
       icon: <TreePine className="pillar-icon" size={28} />,
-      title: "100% Sustentável",
-      description: "Madeira originada de reflorestamento e manejo ecológico controlado com certificação ambiental rigorosa."
+      title: "Produção em Escala",
+      description: "Alta capacidade de produção e entrega confiável. Atendemos revendas e distribuidores em todo o Brasil com produção em larga escala, mantendo o padrão de qualidade e o compromisso com o cliente."
     },
     {
       icon: <ShieldCheck className="pillar-icon" size={28} />,
-      title: "Qualidade PortáBelly",
-      description: "Secagem industrial controlada e montagem milimétrica que evitam empenamentos e asseguram estabilidade duradoura."
+      title: "Parceria Comercial",
+      description: "Trabalhamos exclusivamente com venda para empresas, oferecendo variedade de modelos, suporte comercial e condições especiais para parceiros."
     }
   ];
 

@@ -142,7 +142,7 @@ export default function Header() {
         }
 
         .brand-logo-img {
-          height: 108px;
+          height: 216px;
           width: auto;
           object-fit: contain;
           transition: var(--transition-smooth);
@@ -150,7 +150,7 @@ export default function Header() {
         }
 
         .header-wrapper.scrolled .brand-logo-img {
-          height: 84px;
+          height: 168px;
         }
 
         .desktop-navbar {

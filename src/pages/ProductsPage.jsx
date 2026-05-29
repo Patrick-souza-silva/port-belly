@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { Search, Sparkles, MessageSquare, Info, ArrowUpDown } from 'lucide-react';
 
 export default function ProductsPage() {
@@ -7,29 +7,80 @@ export default function ProductsPage() {
   const [sortBy, setSortBy] = useState('name');
   const [activeSpecModel, setActiveSpecModel] = useState(null);
 
+  // Ref e lógica de arrastar para as tabs de filtro
+  const tabsRef = useRef(null);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+
+    const onMouseDown = (e) => {
+      isDragging.current = true;
+      startX.current = e.pageX - el.offsetLeft;
+      scrollLeft.current = el.scrollLeft;
+      el.style.cursor = 'grabbing';
+      el.style.userSelect = 'none';
+    };
+
+    const onMouseUp = () => {
+      isDragging.current = false;
+      el.style.cursor = 'grab';
+      el.style.userSelect = '';
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDragging.current) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX.current) * 1.5;
+      el.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const onWheel = (e) => {
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+
+    el.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+    el.addEventListener('mousemove', onMouseMove);
+    el.addEventListener('wheel', onWheel, { passive: false });
+
+    return () => {
+      el.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mouseup', onMouseUp);
+      el.removeEventListener('mousemove', onMouseMove);
+      el.removeEventListener('wheel', onWheel);
+    };
+  }, []);
+
   // Fichas técnicas reais de cada linha
   const getLineSpecs = (line) => {
     switch (line) {
       case 'bellyplac':
         return {
-          composicao: "Folha em HDF 3mm com enchimento em colmeia",
-          material: "100% HDF Ultra — branco recoberto com PET; mogno, imbuia e angelim com papel melamínico",
-          batente: "100% HDF Ultra — batentes em alturas 2150mm; larguras: 90mm (12cm), 110mm (14cm), 140mm (17cm), 170mm (20cm), 30mm",
-          guarnicao: "100% HDF Ultra, 7cm de largura; regulagem de 0,50cm para um lado e 3cm para o outro",
-          acabamento: "Branco lacado e branco fosco UV; imbuia, mogno, angelim em pintura UV BELLYPLAC",
-          sistema: "Dobradiças invisíveis — porta entregue com furo frontal, sem fechadura",
-          kit: "Kit completo com batente, guarnição e furação reversível (ou lado direito/esquerdo)",
-          extra: "Os batentes e guarnições foram desenvolvidos para reduzir ou eliminar riscos com umidade. FÁCIL DE LIMPAR, NÃO AMARELA COM O TEMPO, MAIOR RESISTÊNCIA À UMIDADE, ECOLOGICAMENTE CORRETO."
+          composicao: "Quadro em Pinus com enchimento interno",
+          enchimento: "Colmeia, sarrafo ou sólida",
+          material: "Chapa em HDF com pintura UV BELLYPLAC em branco, mogno, angelim e imbuia",
+          embalagem: "Contém fita de borda e embalagem inclusa",
+          acabamento: "Pintura UV BELLYPLAC em branco, mogno, angelim e imbuia",
+          dimensoes: "Altura: 2100mm | Larguras: 600/620mm, 700/720mm, 800/820mm, 900/920mm, 1000mm | Espessura: 35mm",
+          frisos: "Disponível nos frisos: VR-100, VR-101, VR-102, VR-113, VR-115, VR-120, VR-122",
+          extra: "Todas as Portas frisadas com chapa HDF e pintura UV BELLYPLAC: mogno, angelim e imbuia. Uso exclusivo interno."
         };
       case 'frisada':
         return {
           composicao: "Quadro em Pinus com enchimento interno e chapa HDF",
-          enchimento: "Opções: colmeia, sarrafo ou sólida",
+          enchimento: "Colmeia, sarrafo ou sólida",
           acabamento: "Pintura UV BELLYPLAC em branco, mogno, angelim e imbuia",
+          embalagem: "Contém fita de borda e embalagem inclusa",
           especificacoes: "Portas exclusivas para uso interno. Não pode ser pintada com fundo ou tinta a base de água. Não podem sofrer alterações em suas medidas.",
-          dimensoes: "Altura: 2.10m | Larguras: 60/62cm, 70/72cm, 80/82cm, 90/92cm, 100cm | Espessura: 30/35mm",
-          sistema: "HDF 3mm — PORTAS EM HDF 3mm",
-          extra: "Composição: lateral/montante, enchimento de madeira reflorestada/semi-oca, reforço para fechadura, HDF ou lâmina torneada, lâmina faqueada."
+          dimensoes: "Altura: 2100mm | Larguras: 600/620mm, 700/720mm, 800/820mm, 900/920mm, 1000mm | Espessura: 35mm",
+          frisos: "Pode ser fabricada nos seguintes frisos: VR-100, VR-101, VR-102, VR-113, VR-115, VR-120, VR-122",
+          extra: "Todas as Portas frisadas são revestidas com chapa HDF e pintura UV BELLYPLAC: mogno, angelim e imbuia."
         };
       case 'lisa':
         return {
@@ -61,6 +112,16 @@ export default function ProductsPage() {
           sistema: "Reforço para fechadura e dobradiça. Filete nas Bordas e Embalagem",
           extra: "Porta Camarão para verniz. Não pintar com tinta a base de água ou fundo. Capas disponíveis: Curupixá, Tauari e Ipê."
         };
+      case 'camarao':
+        return {
+          composicao: "Quadro em Pinus com laminada faqueada",
+          material: "Capas disponíveis: Curupixá, Tauari e Ipê",
+          estrutura: "Enchimento sarrafo e compensado. Contra-Capa Torneada",
+          acabamento: "Laminada Faqueada — classe para verniz",
+          dimensoes: "Altura 2.10m | Larguras: 60/62cm, 70/72cm, 80/82cm, 90/92cm, 100cm | Espessura 30/35mm",
+          sistema: "Reforço para fechadura e dobradiça. Filete nas Bordas e Embalagem",
+          extra: "Porta Camarão para verniz. Não pintar com tinta a base de água ou fundo. Capas disponíveis: Curupixá, Tauari e Ipê."
+        };
       default:
         return null;
     }
@@ -70,34 +131,44 @@ export default function ProductsPage() {
   const doorModels = useMemo(() => [
     // --- PORTA FRISADA BELLYPLAC (7 modelos VR) ---
     {
+      id: "frisada-vr101",
+      name: "Porta Frisada VR-101 — Mogno Ubatuba",
+      code: "VR-101",
+      line: "frisada",
+      lineLabel: "Porta Frisada",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR101.jpg",
+      description: "Porta Frisada VR-101 com pintura UV BELLYPLAC Mogno Ubatuba. Quadro em Pinus, chapa HDF com enchimento em colmeia, sarrafo ou sólida. Fita de borda e embalagem inclusa. Uso exclusivo interno.",
+      specs: ["Pintura UV BELLYPLAC Mogno", "Quadro em Pinus", "Fita de Borda Inclusa"]
+    },
+    {
+      id: "frisada-vr102",
+      name: "Porta Frisada VR-102 — Angelim",
+      code: "VR-102",
+      line: "frisada",
+      lineLabel: "Porta Frisada",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR102.jpg",
+      description: "Porta Frisada VR-102 com pintura UV BELLYPLAC Angelim. Chapa HDF com enchimento em colmeia, sarrafo ou sólida. Altura 2.10m, larguras de 60cm a 100cm, espessura 35mm.",
+      specs: ["Pintura UV BELLYPLAC Angelim", "Chapa HDF", "Múltiplos Tamanhos"]
+    },
+    {
+      id: "frisada-vr115",
+      name: "Porta Frisada VR-115 — Imbuia Quartier",
+      code: "VR-115",
+      line: "frisada",
+      lineLabel: "Porta Frisada",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR115.jpg",
+      description: "Porta Frisada VR-115 com pintura UV BELLYPLAC Imbuia Quartier. Chapa HDF com pintura UV de alta durabilidade. Quadro em Pinus, fita de borda inclusa. Uso exclusivo interno.",
+      specs: ["Pintura UV BELLYPLAC Imbuia", "Chapa HDF", "Quadro em Pinus"]
+    },
+    {
       id: "frisada-vr100",
       name: "Porta Frisada VR-100",
       code: "VR-100",
       line: "frisada",
       lineLabel: "Porta Frisada",
       image: "/images/linhas/novos-modelos/PortaFrisada-VR100.jpg",
-      description: "Porta frisada Curupixá com quadro em Pinus e chapa HDF, pintura UV BELLYPLAC. Uso interno. Disponível com enchimento em colmeia, sarrafo ou sólida.",
-      specs: ["Quadro em Pinus", "HDF + Pintura UV", "Curupixá"]
-    },
-    {
-      id: "frisada-vr101",
-      name: "Porta Frisada VR-101",
-      code: "VR-101",
-      line: "frisada",
-      lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/PortaFrisada-VR101.jpg",
-      description: "Frisada VR-101 Curupixá com enchimento em colmeia and pintura UV BELLYPLAC. Fita de borda e embalagem inclusa. Exclusiva para uso interno.",
-      specs: ["Quadro em Pinus", "Enchimento Colmeia", "Fita de Borda Inclusa"]
-    },
-    {
-      id: "frisada-vr102",
-      name: "Porta Frisada VR-102",
-      code: "VR-102",
-      line: "frisada",
-      lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/PortaFrisada-VR102.jpg",
-      description: "Modelo VR-102 Curupixá com friso diferenciado. Chapa HDF com pintura UV BELLYPLAC. Altura 2.10m, larguras de 60cm a 100cm, espessura 30/35mm.",
-      specs: ["HDF + Pintura UV BELLYPLAC", "Uso Interno", "Múltiplos Tamanhos"]
+      description: "Porta Frisada VR-100 com quadro em Pinus e chapa HDF, pintura UV BELLYPLAC. Uso interno. Disponível com enchimento em colmeia, sarrafo ou sólida.",
+      specs: ["Quadro em Pinus", "HDF + Pintura UV BELLYPLAC", "Fita de Borda Inclusa"]
     },
     {
       id: "frisada-vr113",
@@ -106,18 +177,8 @@ export default function ProductsPage() {
       line: "frisada",
       lineLabel: "Porta Frisada",
       image: "/images/linhas/novos-modelos/PortaFrisada-VR113.jpg",
-      description: "Frisada VR-113 Curupixá com design de frisos verticais. Não pode ser pintada com tinta à base de água. Estrutura de pinus com reforço para fechadura.",
-      specs: ["Frisos Verticais", "Quadro em Pinus", "Reforço para Fechadura"]
-    },
-    {
-      id: "frisada-vr115",
-      name: "Porta Frisada VR-115",
-      code: "VR-115",
-      line: "frisada",
-      lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/PortaFrisada-VR115.jpg",
-      description: "Frisada VR-115 Curupixá com padrão de friso exclusivo. Chapa HDF com pintura UV de alta durabilidade. Medidas não podem ser alteradas.",
-      specs: ["Chapa HDF", "Pintura UV Durável", "Padrão Curupixá"]
+      description: "Porta Frisada VR-113 com design de frisos verticais. Chapa HDF com pintura UV BELLYPLAC. Estrutura de pinus com reforço para fechadura.",
+      specs: ["Frisos Verticais", "Quadro em Pinus", "HDF + Pintura UV BELLYPLAC"]
     },
     {
       id: "frisada-vr120",
@@ -126,8 +187,8 @@ export default function ProductsPage() {
       line: "frisada",
       lineLabel: "Porta Frisada",
       image: "/images/linhas/novos-modelos/PortaFrisada-VR120.jpg",
-      description: "Frisada VR-120 Curupixá com friso amplo e elegante. Espessura 30/35mm, enchimento sarrafeado ou colmeia. Exclusiva para uso interno residencial.",
-      specs: ["Friso Amplo", "Espessura 30/35mm", "Uso Interno"]
+      description: "Porta Frisada VR-120 com friso amplo e elegante. Espessura 35mm, chapa HDF com pintura UV BELLYPLAC. Exclusiva para uso interno residencial.",
+      specs: ["Friso Amplo", "Espessura 35mm", "HDF + Pintura UV BELLYPLAC"]
     },
     {
       id: "frisada-vr122",
@@ -136,7 +197,7 @@ export default function ProductsPage() {
       line: "frisada",
       lineLabel: "Porta Frisada",
       image: "/images/linhas/novos-modelos/PortaFrisada-VR122.jpg",
-      description: "Frisada VR-122 Curupixá com design contemporâneo e frisos horizontais. Quadro em Pinus com HDF e pintura UV BELLYPLAC. Fita de borda inclusa.",
+      description: "Porta Frisada VR-122 com design contemporâneo e frisos horizontais. Quadro em Pinus com HDF e pintura UV BELLYPLAC. Fita de borda inclusa.",
       specs: ["Frisos Horizontais", "HDF UV BELLYPLAC", "Quadro em Pinus"]
     },
 
@@ -152,12 +213,32 @@ export default function ProductsPage() {
       specs: ["Capa Curupixá Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
     },
     {
+      id: "lisa-tauari-1",
+      name: "Lisa Tauari Class",
+      code: "LISA-TAUARI-1",
+      line: "lisa",
+      lineLabel: "Porta Lisa (Verniz)",
+      image: "/images/linhas/novos-modelos/PortaTauari-class.jpg",
+      description: "Porta lisa classe para verniz com capa de Tauari natural. Quadro em Pinus, contra-capa em HDF, reforço para fechadura e dobradiça. Filete nas bordas.",
+      specs: ["Capa Tauari Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
+    },
+    {
+      id: "lisa-ipe-1",
+      name: "Lisa Ipê Class",
+      code: "LISA-IPE-1",
+      line: "lisa",
+      lineLabel: "Porta Lisa (Verniz)",
+      image: "/images/linhas/novos-modelos/PortaIpe-class.jpg",
+      description: "Porta lisa classe para verniz com capa de Ipê natural. Quadro em Pinus, contra-capa em HDF, reforço para fechadura e dobradiça. Filete nas bordas.",
+      specs: ["Capa Ipê Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
+    },
+    {
       id: "lisa-curupixa-2",
       name: "Porta Curupixa Comercial",
       code: "LISA-CURUPIXA-2",
       line: "lisa",
       lineLabel: "Porta Lisa (Verniz)",
-      image: "/images/linhas/novos-modelos/PortaCurupixa-class2.jpg",
+      image: "/images/linhas/novos-modelos/PortaCurupixa-class1.jpg",
       description: "Variação da lisa Curupixá com veios diferenciados. Capa laminada natural, contra-capa HDF. Disponível também em Tauari e Ipê. Acabamento verniz UV.",
       specs: ["Lâmina Natural Curupixá", "Contra-Capa HDF", "Acabamento Verniz UV"]
     },
@@ -181,28 +262,18 @@ export default function ProductsPage() {
       code: "SOLIDA-CURUPIXA",
       line: "solida",
       lineLabel: "Porta Sólida",
-      image: "/images/linhas/novos-modelos/PortaSolida.jpg",
+      image: "/images/linhas/novos-modelos/PortaSolida-nova.jpg",
       description: "Porta sólida com quadro em Pinus e laminada faqueada. Enchimento sarrafo e compensado com contra-capa torneada. Filete nas bordas. Capas disponíveis: Curupixá, Tauari e Ipê.",
       specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
     },
 
-    // --- PORTA CAMARÃO PARA VERNIZ (disponível em Lisa e Sólida) ---
+    // --- PORTA CAMARÃO PARA VERNIZ ---
     {
       id: "camarao-verniz-lisa",
       name: "Porta Camarão (Verniz)",
       code: "CAMARAO-VERNIZ",
-      line: "lisa",
-      lineLabel: "Porta Lisa (Verniz)",
-      image: "/images/linhas/novos-modelos/PortaSolida.jpg",
-      description: "Porta Camarão para verniz com laminada faqueada e contra-capa torneada. Quadro em Pinus, enchimento sarrafo e compensado, filete nas bordas. Capas: Curupixá, Tauari e Ipê.",
-      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
-    },
-    {
-      id: "camarao-verniz-solida",
-      name: "Porta Camarão (Verniz)",
-      code: "CAMARAO-VERNIZ",
-      line: "solida",
-      lineLabel: "Porta Sólida",
+      line: "camarao",
+      lineLabel: "Porta Camarão",
       image: "/images/linhas/novos-modelos/PortaSolida.jpg",
       description: "Porta Camarão para verniz com laminada faqueada e contra-capa torneada. Quadro em Pinus, enchimento sarrafo e compensado, filete nas bordas. Capas: Curupixá, Tauari e Ipê.",
       specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
@@ -275,7 +346,8 @@ export default function ProductsPage() {
     const lisa = doorModels.filter(d => d.line === 'lisa').length;
     const semioca = doorModels.filter(d => d.line === 'semioca').length;
     const solida = doorModels.filter(d => d.line === 'solida').length;
-    return { total, bellyplac, frisada, lisa, semioca, solida };
+    const camarao = doorModels.filter(d => d.line === 'camarao').length;
+    return { total, bellyplac, frisada, lisa, semioca, solida, camarao };
   }, [doorModels]);
 
   return (
@@ -332,7 +404,10 @@ export default function ProductsPage() {
           </div>
 
           {/* Responsive filter tabs bar */}
-          <div className="filters-tabs-container animate-fade-in-up animate-delay-100">
+          <div
+            className="filters-tabs-container animate-fade-in-up animate-delay-100"
+            ref={tabsRef}
+          >
             <div className="filters-tabs">
               <button
                 onClick={() => setSelectedLine('all')}
@@ -375,6 +450,13 @@ export default function ProductsPage() {
               >
                 <span>Porta Sólida</span>
                 <span className="tab-count-badge">{counts.solida}</span>
+              </button>
+              <button
+                onClick={() => setSelectedLine('camarao')}
+                className={`filter-tab-btn ${selectedLine === 'camarao' ? 'active' : ''}`}
+              >
+                <span>Porta Camarão</span>
+                <span className="tab-count-badge">{counts.camarao}</span>
               </button>
             </div>
           </div>
@@ -534,9 +616,11 @@ export default function ProductsPage() {
                             sistema: 'Sistema de Montagem',
                             kit: 'Kit Incluso',
                             enchimento: 'Enchimento',
+                            embalagem: 'Embalagem',
                             especificacoes: 'Atenção',
                             dimensoes: 'Dimensões Padrão',
                             estrutura: 'Estrutura Interior',
+                            frisos: 'Frisos Disponíveis',
                           }[key] || key}:</strong>
                           <span>{value}</span>
                         </li>
@@ -759,11 +843,31 @@ export default function ProductsPage() {
           width: 100%;
           overflow-x: auto;
           white-space: nowrap;
-          scrollbar-width: none;
+          cursor: grab;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(81, 1, 1, 0.2) transparent;
+          padding-bottom: 6px;
         }
 
         .filters-tabs-container::-webkit-scrollbar {
-          display: none;
+          height: 4px;
+        }
+
+        .filters-tabs-container::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .filters-tabs-container::-webkit-scrollbar-thumb {
+          background-color: rgba(81, 1, 1, 0.2);
+          border-radius: 4px;
+        }
+
+        .filters-tabs-container::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(81, 1, 1, 0.4);
+        }
+
+        .filters-tabs-container:active {
+          cursor: grabbing;
         }
 
         .filters-tabs {
