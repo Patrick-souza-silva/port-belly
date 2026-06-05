@@ -6,6 +6,7 @@ export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState('name');
   const [activeSpecModel, setActiveSpecModel] = useState(null);
+  const [activeImageMode, setActiveImageMode] = useState('external');
 
   // Ref e lógica de arrastar para as tabs de filtro
   const tabsRef = useRef(null);
@@ -71,16 +72,25 @@ export default function ProductsPage() {
           frisos: "Disponível nos frisos: VR-100, VR-101, VR-102, VR-113, VR-115, VR-120, VR-122",
           extra: "Todas as Portas frisadas com chapa HDF e pintura UV BELLYPLAC: mogno, angelim e imbuia. Uso exclusivo interno."
         };
+      case 'bellyplac-frisadas':
+        return {
+          composicao: "Quadro em Pinus com enchimento interno e chapa HDF",
+          enchimento: "Colmeia, sarrafo ou sólida",
+          acabamento: "Pintura UV BELLYPLAC nas cores branco, mogno, angelim e imbuia",
+          embalagem: "Contém fita de borda e embalagem inclusa",
+          especificacoes: "Portas exclusivas para uso interno. Não podem ser pintadas com fundo ou tinta à base de água. Não podem sofrer alterações em suas medidas.",
+          dimensoes: "Altura: 2100 mm | Larguras: 600/620 mm, 700/720 mm, 800/820 mm, 900/920 mm e 1000 mm | Espessura: 35 mm",
+          frisos: "VR-100, VR-101, VR-102, VR-113, VR-115, VR-120 e VR-122"
+        };
       case 'frisada':
         return {
           composicao: "Quadro em Pinus com enchimento interno e chapa HDF",
           enchimento: "Colmeia, sarrafo ou sólida",
-          acabamento: "Pintura UV BELLYPLAC em branco, mogno, angelim e imbuia",
+          capas: "Tauari, Ipê e Curupixá",
           embalagem: "Contém fita de borda e embalagem inclusa",
-          especificacoes: "Portas exclusivas para uso interno. Não pode ser pintada com fundo ou tinta a base de água. Não podem sofrer alterações em suas medidas.",
-          dimensoes: "Altura: 2100mm | Larguras: 600/620mm, 700/720mm, 800/820mm, 900/920mm, 1000mm | Espessura: 35mm",
-          frisos: "Pode ser fabricada nos seguintes frisos: VR-100, VR-101, VR-102, VR-113, VR-115, VR-120, VR-122",
-          extra: "Todas as Portas frisadas são revestidas com chapa HDF e pintura UV BELLYPLAC: mogno, angelim e imbuia."
+          especificacoes: "Portas exclusivas para uso interno. Não podem ser pintadas com fundo ou tinta à base de água. Não podem sofrer alterações em suas medidas.",
+          dimensoes: "Altura: 2100 mm | Larguras: 600/620 mm, 700/720 mm, 800/820 mm, 900/920 mm e 1000 mm | Espessura: 35 mm",
+          frisos: "VR-100, VR-101, VR-102, VR-113, VR-115, VR-120 e VR-122"
         };
       case 'lisa':
         return {
@@ -136,7 +146,7 @@ export default function ProductsPage() {
       code: "VR-101",
       line: "frisada",
       lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR101.jpg",
+      image: "/images/linhas/novos-modelos/PortaFrisada-VR101.jpg",
       description: "Porta Frisada VR-101 com pintura UV BELLYPLAC Mogno Ubatuba. Quadro em Pinus, chapa HDF com enchimento em colmeia, sarrafo ou sólida. Fita de borda e embalagem inclusa. Uso exclusivo interno.",
       specs: ["Pintura UV BELLYPLAC Mogno", "Quadro em Pinus", "Fita de Borda Inclusa"]
     },
@@ -146,7 +156,7 @@ export default function ProductsPage() {
       code: "VR-102",
       line: "frisada",
       lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR102.jpg",
+      image: "/images/linhas/novos-modelos/PortaFrisada-VR102.jpg",
       description: "Porta Frisada VR-102 com pintura UV BELLYPLAC Angelim. Chapa HDF com enchimento em colmeia, sarrafo ou sólida. Altura 2.10m, larguras de 60cm a 100cm, espessura 35mm.",
       specs: ["Pintura UV BELLYPLAC Angelim", "Chapa HDF", "Múltiplos Tamanhos"]
     },
@@ -156,7 +166,7 @@ export default function ProductsPage() {
       code: "VR-115",
       line: "frisada",
       lineLabel: "Porta Frisada",
-      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR115.jpg",
+      image: "/images/linhas/novos-modelos/PortaFrisada-VR115.jpg",
       description: "Porta Frisada VR-115 com pintura UV BELLYPLAC Imbuia Quartier. Chapa HDF com pintura UV de alta durabilidade. Quadro em Pinus, fita de borda inclusa. Uso exclusivo interno.",
       specs: ["Pintura UV BELLYPLAC Imbuia", "Chapa HDF", "Quadro em Pinus"]
     },
@@ -240,7 +250,8 @@ export default function ProductsPage() {
       lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaCurupixa-class1.jpg",
       description: "Variação da lisa Curupixá com veios diferenciados. Capa laminada natural, contra-capa HDF. Disponível também em Tauari e Ipê. Acabamento verniz UV.",
-      specs: ["Lâmina Natural Curupixá", "Contra-Capa HDF", "Acabamento Verniz UV"]
+      specs: ["Lâmina Natural Curupixá", "Contra-Capa HDF", "Acabamento Verniz UV"],
+      internalImage: "/images/linhas/novos-modelos/SARRAFO.png"
     },
 
     // --- PORTA SEMI-OCA VIROLA / SARRAFEADA (1 modelo) ---
@@ -252,7 +263,8 @@ export default function ProductsPage() {
       lineLabel: "Porta Semi-Oca",
       image: "/images/linhas/novos-modelos/PortaSemiOca-Virola.jpg",
       description: "Porta semi-oca (sarrafeada) com quadro em Pinus, sarrafo de compensado com reforço para fechadura e dobradiça. Contra-capa laminado. Capa Virola/Amescla.",
-      specs: ["Quadro em Pinus", "Estrutura Sarrafeada", "Capa Virola/Amescla"]
+      specs: ["Quadro em Pinus", "Estrutura Sarrafeada", "Capa Virola/Amescla"],
+      internalImage: "/images/linhas/novos-modelos/SARRAFO.png"
     },
 
     // --- PORTA SÓLIDA ---
@@ -264,7 +276,8 @@ export default function ProductsPage() {
       lineLabel: "Porta Sólida",
       image: "/images/linhas/novos-modelos/PortaSolida-nova.jpg",
       description: "Porta sólida com quadro em Pinus e laminada faqueada. Enchimento sarrafo e compensado com contra-capa torneada. Filete nas bordas. Capas disponíveis: Curupixá, Tauari e Ipê.",
-      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
+      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"],
+      internalImage: "/images/linhas/novos-modelos/QUADROMACICO.png"
     },
 
     // --- PORTA CAMARÃO PARA VERNIZ ---
@@ -276,7 +289,8 @@ export default function ProductsPage() {
       lineLabel: "Porta Camarão",
       image: "/images/linhas/novos-modelos/PortaSolida.jpg",
       description: "Porta Camarão para verniz com laminada faqueada e contra-capa torneada. Quadro em Pinus, enchimento sarrafo e compensado, filete nas bordas. Capas: Curupixá, Tauari e Ipê.",
-      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"]
+      specs: ["Laminada Faqueada", "Contra-Capa Torneada", "Capas: Curupixá, Tauari, Ipê"],
+      internalImage: "/images/linhas/novos-modelos/QUADROMACICO.png"
     },
 
     // --- BELLYPLAC (4 modelos) ---
@@ -320,6 +334,37 @@ export default function ProductsPage() {
       description: "Folha HDF 3mm cor imbuia quartier com pintura UV BELLYPLAC. Guarnição com regulagem de 0,50cm para um lado e 3cm para o outro.",
       specs: ["HDF 3mm com Colmeia", "Pintura UV BELLYPLAC Imbuia", "Guarnição Regulável"]
     },
+    // --- BELLYPLAC FRISADAS ---
+    {
+      id: "bellyplac-frisada-vr115",
+      name: "BellyPlac Frisada VR-115",
+      code: "VR-115",
+      line: "bellyplac-frisadas",
+      lineLabel: "Bellyplac Frisadas",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR115.jpg",
+      description: "Porta Bellyplac Frisada VR-115 com pintura UV. Quadro em Pinus, chapa HDF. Uso exclusivo interno.",
+      specs: ["Pintura UV BELLYPLAC", "Quadro em Pinus", "Fita de Borda Inclusa"]
+    },
+    {
+      id: "bellyplac-frisada-vr102",
+      name: "BellyPlac Frisada VR-102",
+      code: "VR-102",
+      line: "bellyplac-frisadas",
+      lineLabel: "Bellyplac Frisadas",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR102.jpg",
+      description: "Porta Bellyplac Frisada VR-102 com pintura UV. Quadro em Pinus, chapa HDF. Uso exclusivo interno.",
+      specs: ["Pintura UV BELLYPLAC", "Quadro em Pinus", "Fita de Borda Inclusa"]
+    },
+    {
+      id: "bellyplac-frisada-vr101",
+      name: "BellyPlac Frisada VR-101",
+      code: "VR-101",
+      line: "bellyplac-frisadas",
+      lineLabel: "Bellyplac Frisadas",
+      image: "/images/linhas/novos-modelos/BellyPlacFrisada-VR101.jpg",
+      description: "Porta Bellyplac Frisada VR-101 com pintura UV. Quadro em Pinus, chapa HDF. Uso exclusivo interno.",
+      specs: ["Pintura UV BELLYPLAC", "Quadro em Pinus", "Fita de Borda Inclusa"]
+    },
   ], []);
 
   // Filtragem e busca reativa
@@ -342,12 +387,13 @@ export default function ProductsPage() {
   const counts = useMemo(() => {
     const total = doorModels.length;
     const bellyplac = doorModels.filter(d => d.line === 'bellyplac').length;
+    const bellyplacFrisadas = doorModels.filter(d => d.line === 'bellyplac-frisadas').length;
     const frisada = doorModels.filter(d => d.line === 'frisada').length;
     const lisa = doorModels.filter(d => d.line === 'lisa').length;
     const semioca = doorModels.filter(d => d.line === 'semioca').length;
     const solida = doorModels.filter(d => d.line === 'solida').length;
     const camarao = doorModels.filter(d => d.line === 'camarao').length;
-    return { total, bellyplac, frisada, lisa, semioca, solida, camarao };
+    return { total, bellyplac, bellyplacFrisadas, frisada, lisa, semioca, solida, camarao };
   }, [doorModels]);
 
   return (
@@ -422,6 +468,13 @@ export default function ProductsPage() {
               >
                 <span>Bellyplac</span>
                 <span className="tab-count-badge">{counts.bellyplac}</span>
+              </button>
+              <button
+                onClick={() => setSelectedLine('bellyplac-frisadas')}
+                className={`filter-tab-btn ${selectedLine === 'bellyplac-frisadas' ? 'active' : ''}`}
+              >
+                <span>Bellyplac Frisadas</span>
+                <span className="tab-count-badge">{counts.bellyplacFrisadas}</span>
               </button>
               <button
                 onClick={() => setSelectedLine('frisada')}
@@ -515,7 +568,7 @@ export default function ProductsPage() {
                     {/* Action Buttons Row */}
                     <div className="model-actions-row">
                       <button 
-                        onClick={() => setActiveSpecModel(model)}
+                        onClick={() => { setActiveSpecModel(model); setActiveImageMode('external'); }}
                         className="model-specs-btn"
                         title="Ver especificações técnicas detalhadas"
                       >
@@ -594,10 +647,29 @@ export default function ProductsPage() {
                   {/* Photo panel */}
                   <div className="spec-modal-photo-panel">
                     <img 
-                      src={activeSpecModel.image} 
+                      src={activeImageMode === 'internal' && activeSpecModel.internalImage ? activeSpecModel.internalImage : activeSpecModel.image} 
                       alt={activeSpecModel.name}
+                      className="spec-modal-image fade-in-image"
+                      key={activeImageMode}
                       onError={(e) => { e.target.src = "/images/laminated-door.png"; }}
                     />
+                    
+                    {activeSpecModel.internalImage && (
+                      <div className="spec-image-toggle">
+                        <button 
+                          className={`toggle-btn ${activeImageMode === 'external' ? 'active' : ''}`}
+                          onClick={() => setActiveImageMode('external')}
+                        >
+                          Visão Externa
+                        </button>
+                        <button 
+                          className={`toggle-btn ${activeImageMode === 'internal' ? 'active' : ''}`}
+                          onClick={() => setActiveImageMode('internal')}
+                        >
+                          Visão Interna
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   {/* Details panel */}
@@ -1006,12 +1078,11 @@ export default function ProductsPage() {
           object-fit: contain;
           display: block;
           transition: var(--transition-smooth);
-          filter: drop-shadow(0 8px 24px rgba(0,0,0,0.18));
+          mix-blend-mode: multiply;
         }
 
         .model-card:hover .model-img {
           transform: scale(1.06) translateY(-4px);
-          filter: drop-shadow(0 16px 32px rgba(0,0,0,0.22));
         }
 
         .model-line-tag-overlay {
@@ -1247,18 +1318,59 @@ export default function ProductsPage() {
           border: 1px solid var(--border-light);
           background: linear-gradient(160deg, #f5f2ee 0%, #ede8e0 50%, #e8e2d8 100%);
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
           height: 100%;
           min-height: 280px;
-          max-height: 420px;
+          max-height: 460px;
           padding: 1.5rem;
+          position: relative;
         }
 
-        .spec-modal-photo-panel img {
+        .spec-modal-image {
+          flex-grow: 1;
           height: 100%;
           object-fit: contain;
-          max-height: 380px;
+          max-height: 340px;
+          mix-blend-mode: multiply;
+        }
+
+        .fade-in-image {
+          animation: fadeInImg 0.35s ease-in-out;
+        }
+        
+        @keyframes fadeInImg {
+          from { opacity: 0; transform: scale(0.98); }
+          to { opacity: 1; transform: scale(1); }
+        }
+
+        .spec-image-toggle {
+          display: flex;
+          background: var(--bg-white);
+          border-radius: 30px;
+          padding: 4px;
+          margin-top: 1rem;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+          border: 1px solid var(--border-light);
+        }
+        
+        .toggle-btn {
+          background: transparent;
+          border: none;
+          padding: 6px 16px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          color: var(--text-muted);
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        
+        .toggle-btn.active {
+          background: var(--primary-dark);
+          color: var(--text-white);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .spec-modal-details-panel {
@@ -1406,8 +1518,8 @@ export default function ProductsPage() {
           }
 
           .spec-modal-photo-panel {
-            min-height: 180px;
-            max-height: 220px;
+            min-height: 260px;
+            max-height: 320px;
           }
 
           .spec-modal-body {

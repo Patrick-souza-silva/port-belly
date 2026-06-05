@@ -27,7 +27,7 @@ export default function About() {
         <div className="about-content">
           <span className="about-subtitle">NOSSA HISTÓRIA</span>
           <h2 className="about-title">
-            De <strong>Portas Alvorada</strong> para <strong>PortáBelly</strong>: Uma Evolução de Tradição e Elegância
+            De <strong>Portas Alvorada</strong> para <strong><span className="brand-name">PortáBelly</span></strong>: Uma Evolução de Tradição e Elegância
           </h2>
           
           <p className="about-text">

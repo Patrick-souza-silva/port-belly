@@ -123,12 +123,12 @@ export default function InstagramFeed() {
         <div className="insta-header">
           <div className="insta-badge">
             <Sparkles size={14} className="insta-badge-icon" />
-            <span>Conexão Social</span>
+            <span>Conexão Digital</span>
           </div>
-          <h2 className="insta-title">Inspiração no Instagram</h2>
+          <h2 className="insta-title font-walkway">ACOMPANHE A <span className="brand-name">PORTABELLY</span> NO INSTAGRAM</h2>
           <div className="insta-divider"></div>
           <p className="insta-subtitle">
-            Acompanhe em tempo real o dia a dia da nossa fábrica, novos projetos, lançamentos e toda a nossa paixão por esquadrias de alto padrão.
+            Fique por dentro dos nossos lançamentos, linhas de produtos, novidades da fábrica e conteúdos exclusivos para revendas, distribuidores e parceiros comerciais.
           </p>
           
           <a 

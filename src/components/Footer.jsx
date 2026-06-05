@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Factory Info Column */}
           <div className="footer-col contact-col">
-            <h4 className="footer-col-title">Fábrica PortáBelly</h4>
+            <h4 className="footer-col-title">Fábrica <span className="brand-name">PortáBelly</span></h4>
             <p className="footer-info-text">
               Rua Marechal Hermes da Fonseca, 173<br />
               Bairro Industrial, Renascença - PR<br />

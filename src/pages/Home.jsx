@@ -8,7 +8,7 @@ export default function Home() {
     {
       icon: <Award className="pillar-icon" size={28} />,
       title: "Qualidade da Madeira",
-      description: "Madeiras selecionadas e acabamentos de excelência. Produzimos portas cruas com matéria-prima de qualidade, garantindo resistência, estabilidade e ótimo acabamento para pintura ou verniz."
+      description: "Madeiras selecionadas e acabamentos de excelência. Produzimos portas cruas com matéria-prima de qualidade Produzimos portas cruas e portas prontas com matéria-prima de qualidade, garantindo resistência, estabilidade e ótimo acabamento para pintura ou verniz."
     },
     {
       icon: <TreePine className="pillar-icon" size={28} />,
@@ -18,7 +18,7 @@ export default function Home() {
     {
       icon: <ShieldCheck className="pillar-icon" size={28} />,
       title: "Parceria Comercial",
-      description: "Trabalhamos exclusivamente com venda para empresas, oferecendo variedade de modelos, suporte comercial e condições especiais para parceiros."
+      description: "Trabalhamos oferecendo diversas variedades de produtos e modelos, suporte comercial e condições especiais para nossos parceiros."
     }
   ];
 
@@ -49,10 +49,10 @@ export default function Home() {
         <div className="container home-hero-container">
           <div className="home-hero-content animate-fade-in-up">
             <div className="home-hero-badge">
-              <span>Portábelly de portas abertas para o futuro</span>
+              <span><span className="brand-name">PortáBelly</span> de portas abertas para o futuro</span>
             </div>
-            <h1 className="home-hero-title">
-              Portas ALVORADA e Portábelly <span className="title-accent">uniram-se</span>
+            <h1 className="home-hero-title font-walkway">
+              Portas ALVORADA e <span className="brand-name">PortáBelly</span> <span className="title-accent">uniram-se</span>
             </h1>
             <p className="home-hero-desc hero-accent-lead">
               e, agora estão mais fortes e preparadas para oferecer o que há de melhor na linha de portas internas.
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="container">
           <div className="home-section-header reveal reveal-fade-in-up">
             <span className="home-section-tag">DIFERENCIAIS</span>
-            <h2 className="home-section-title">Por Que Escolher a PortáBelly?</h2>
+            <h2 className="home-section-title font-walkway">Por Que Escolher a <span className="brand-name">PortáBelly</span>?</h2>
             <div className="section-bar"></div>
           </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="teaser-content reveal reveal-fade-in-right">
             <span className="teaser-tag">NOSSA HISTÓRIA</span>
-            <h2 className="teaser-title">Portábelly Indústria de Portas vem renovada</h2>
+            <h2 className="teaser-title font-walkway"><span className="brand-name">PortáBelly</span> Indústria de Portas vem renovada</h2>
             <p className="teaser-text">
               Com sucesso consolidado e, principalmente, mantém a origem e princípios familiar.
             </p>
@@ -128,11 +128,11 @@ export default function Home() {
       <section className="home-products-teaser">
         <div className="container">
           <div className="home-section-header reveal reveal-fade-in-up">
-            <span className="home-section-tag">SOFISTICAÇÃO</span>
-            <h2 className="home-section-title">Linhas Desenvolvidas Para Surpreender</h2>
+            <span className="home-section-tag">LINHA DE PORTAS</span>
+            <h2 className="home-section-title font-walkway">PORTFÓLIO COMPLETO PARA O SEU NEGÓCIO</h2>
             <div className="section-bar"></div>
             <p className="home-section-lead">
-              A elegância intemporal das portas de madeira sob medida para a sua arquitetura.
+              Variedade de modelos e linhas desenvolvidas para atender distribuidores, revendas e parceiros comerciais em todo o Brasil.
             </p>
           </div>
 
