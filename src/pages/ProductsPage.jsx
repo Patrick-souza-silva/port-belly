@@ -97,7 +97,7 @@ export default function ProductsPage() {
           composicao: "Quadro em Pinus com capa laminada",
           material: "Capas disponíveis: Curupixá, Tauari e Ipê — lâmina natural de alta fidelidade",
           estrutura: "Contra-Capa em HDF, reforço para fechadura e dobradiça, filete nas bordas e embalagem",
-          acabamento: "Verniz especial de cura UV (toque aveludado e anti-risco) — classe para verniz",
+          acabamento: "Classe para verniz (A porta não é entregue envernizada)",
           dimensoes: "Tamanho padrão: Altura 2.10m | Larguras: 60/62cm, 70/72cm, 80/82cm, 90/92cm, 100cm | Espessura: 30/35mm",
           sistema: "Dobradiças de encaixe — pode ser pintada somente com verniz",
           extra: "Por se tratar de lâmina natural, pode ocorrer diferenças na cor/tonalidade. Disponível nos padrões: Curupixá, Ipê, Tauari."
@@ -132,6 +132,14 @@ export default function ProductsPage() {
           sistema: "Reforço para fechadura e dobradiça. Filete nas Bordas e Embalagem",
           extra: "Porta Camarão para verniz. Não pintar com tinta a base de água ou fundo. Capas disponíveis: Curupixá, Tauari e Ipê."
         };
+      case 'kits':
+        return {
+          composicao: "Desenvolvidos para reduzir ou eliminar os riscos de problemas com umidade.",
+          diferenciais: "Qualidade garantida, fácil de limpar e manter, não amarela com o tempo, maior resistência à umidade e ecologicamente correto.",
+          batente: "Altura: 2150mm | Espessura: 30mm | Larguras: 90mm (12cm), 110mm (14cm), 140mm (17cm), 170mm (20cm)",
+          guarnicao: "Altura: 2200mm | Espessura: 15mm | Largura: 70mm",
+          extra: "Medidas especiais sob consulta. Desde que seja seguido as recomendações de uso do produto."
+        };
       default:
         return null;
     }
@@ -142,7 +150,7 @@ export default function ProductsPage() {
     // --- PORTA FRISADA BELLYPLAC (7 modelos VR) ---
     {
       id: "frisada-vr101",
-      name: "Porta Frisada VR-101 — Mogno Ubatuba",
+      name: "Porta Frisada VR-101",
       code: "VR-101",
       line: "frisada",
       lineLabel: "Porta Frisada",
@@ -152,7 +160,7 @@ export default function ProductsPage() {
     },
     {
       id: "frisada-vr102",
-      name: "Porta Frisada VR-102 — Angelim",
+      name: "Porta Frisada VR-102",
       code: "VR-102",
       line: "frisada",
       lineLabel: "Porta Frisada",
@@ -162,7 +170,7 @@ export default function ProductsPage() {
     },
     {
       id: "frisada-vr115",
-      name: "Porta Frisada VR-115 — Imbuia Quartier",
+      name: "Porta Frisada VR-115",
       code: "VR-115",
       line: "frisada",
       lineLabel: "Porta Frisada",
@@ -220,7 +228,7 @@ export default function ProductsPage() {
       lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaCurupixa-class1.jpg",
       description: "Porta lisa classe para verniz com capa de Curupixá natural. Quadro em Pinus, contra-capa em HDF, reforço para fechadura e dobradiça. Filete nas bordas.",
-      specs: ["Capa Curupixá Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
+      specs: ["Capa Curupixá Natural", "Quadro em Pinus", "Classe Verniz (Não Envernizada)"]
     },
     {
       id: "lisa-tauari-1",
@@ -230,7 +238,7 @@ export default function ProductsPage() {
       lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaTauari-class.jpg",
       description: "Porta lisa classe para verniz com capa de Tauari natural. Quadro em Pinus, contra-capa em HDF, reforço para fechadura e dobradiça. Filete nas bordas.",
-      specs: ["Capa Tauari Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
+      specs: ["Capa Tauari Natural", "Quadro em Pinus", "Classe Verniz (Não Envernizada)"]
     },
     {
       id: "lisa-ipe-1",
@@ -240,7 +248,7 @@ export default function ProductsPage() {
       lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaIpe-class.jpg",
       description: "Porta lisa classe para verniz com capa de Ipê natural. Quadro em Pinus, contra-capa em HDF, reforço para fechadura e dobradiça. Filete nas bordas.",
-      specs: ["Capa Ipê Natural", "Quadro em Pinus", "Verniz UV — Não pintar com tinta base d'água"]
+      specs: ["Capa Ipê Natural", "Quadro em Pinus", "Classe Verniz (Não Envernizada)"]
     },
     {
       id: "lisa-curupixa-2",
@@ -249,8 +257,8 @@ export default function ProductsPage() {
       line: "lisa",
       lineLabel: "Porta Lisa (Verniz)",
       image: "/images/linhas/novos-modelos/PortaCurupixa-class1.jpg",
-      description: "Variação da lisa Curupixá com veios diferenciados. Capa laminada natural, contra-capa HDF. Disponível também em Tauari e Ipê. Acabamento verniz UV.",
-      specs: ["Lâmina Natural Curupixá", "Contra-Capa HDF", "Acabamento Verniz UV"],
+      description: "Variação da lisa Curupixá com veios diferenciados. Capa laminada natural, contra-capa HDF. Disponível também em Tauari e Ipê. Classe para verniz (não envernizada).",
+      specs: ["Lâmina Natural Curupixá", "Contra-Capa HDF", "Classe Verniz (Não Envernizada)"],
       internalImage: "/images/linhas/novos-modelos/SARRAFO.png"
     },
 
@@ -365,6 +373,47 @@ export default function ProductsPage() {
       description: "Porta Bellyplac Frisada VR-101 com pintura UV. Quadro em Pinus, chapa HDF. Uso exclusivo interno.",
       specs: ["Pintura UV BELLYPLAC", "Quadro em Pinus", "Fita de Borda Inclusa"]
     },
+    // --- KITS PORTA PRONTA ---
+    {
+      id: "kit-branco",
+      name: "Kit Porta Branca",
+      code: "KIT-BRANCO",
+      line: "kits",
+      lineLabel: "Kits Bellyplac",
+      image: "/images/linhas/novos-modelos/kit-branco.jpeg",
+      description: "Kit porta pronta na cor branca. Acompanha batente, guarnição e folha. Instalação rápida e acabamento premium.",
+      specs: ["Kit Completo", "Acabamento Branco", "Fácil Instalação"]
+    },
+    {
+      id: "kit-angelim",
+      name: "Kit Porta Angelim",
+      code: "KIT-ANGELIM",
+      line: "kits",
+      lineLabel: "Kits Bellyplac",
+      image: "/images/linhas/novos-modelos/kit-angelim.jpeg",
+      description: "Kit porta pronta na cor Angelim. Acompanha batente, guarnição e folha. Acabamento durável.",
+      specs: ["Kit Completo", "Padrão Angelim", "Fácil Instalação"]
+    },
+    {
+      id: "kit-imbuia",
+      name: "Kit Porta Imbuia",
+      code: "KIT-IMBUIA",
+      line: "kits",
+      lineLabel: "Kits Bellyplac",
+      image: "/images/linhas/novos-modelos/kit-imbuia.jpeg",
+      description: "Kit porta pronta na cor Imbuia. Acompanha batente, guarnição e folha. Visual rústico e sofisticado.",
+      specs: ["Kit Completo", "Padrão Imbuia", "Fácil Instalação"]
+    },
+    {
+      id: "kit-mogno",
+      name: "Kit Porta Mogno",
+      code: "KIT-MOGNO",
+      line: "kits",
+      lineLabel: "Kits Bellyplac",
+      image: "/images/linhas/novos-modelos/kit-mogno.jpeg",
+      description: "Kit porta pronta na cor Mogno. Acompanha batente, guarnição e folha. Clássico e elegante.",
+      specs: ["Kit Completo", "Padrão Mogno", "Fácil Instalação"]
+    },
   ], []);
 
   // Filtragem e busca reativa
@@ -393,7 +442,8 @@ export default function ProductsPage() {
     const semioca = doorModels.filter(d => d.line === 'semioca').length;
     const solida = doorModels.filter(d => d.line === 'solida').length;
     const camarao = doorModels.filter(d => d.line === 'camarao').length;
-    return { total, bellyplac, bellyplacFrisadas, frisada, lisa, semioca, solida, camarao };
+    const kits = doorModels.filter(d => d.line === 'kits').length;
+    return { total, bellyplac, bellyplacFrisadas, frisada, lisa, semioca, solida, camarao, kits };
   }, [doorModels]);
 
   return (
@@ -510,6 +560,13 @@ export default function ProductsPage() {
               >
                 <span>Porta Camarão</span>
                 <span className="tab-count-badge">{counts.camarao}</span>
+              </button>
+              <button
+                onClick={() => setSelectedLine('kits')}
+                className={`filter-tab-btn ${selectedLine === 'kits' ? 'active' : ''}`}
+              >
+                <span>Kits Bellyplac</span>
+                <span className="tab-count-badge">{counts.kits}</span>
               </button>
             </div>
           </div>
@@ -693,6 +750,7 @@ export default function ProductsPage() {
                             dimensoes: 'Dimensões Padrão',
                             estrutura: 'Estrutura Interior',
                             frisos: 'Frisos Disponíveis',
+                            diferenciais: 'Características',
                           }[key] || key}:</strong>
                           <span>{value}</span>
                         </li>

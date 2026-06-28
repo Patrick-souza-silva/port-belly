@@ -6,8 +6,8 @@ export default function ContactPage() {
     {
       icon: <MapPin size={22} />,
       label: "Sede Fabril & Showroom",
-      value: "Rua Marechal Hermes da Fonseca, 173 - Bairro Industrial, Renascença - PR, CEP: 85610-000",
-      link: "https://maps.google.com/maps?q=Rua%20Marechal%20Hermes%20da%20Fonseca,%20173,%20Renascen%C3%A7a%20-%20PR"
+      value: "Rua Marechal H. da Fonseca, S/N - Industrial II, Renascença - PR, CEP: 85.611-503",
+      link: "https://maps.google.com/maps?q=-26.1557996%2C-52.9691905&z=17&hl=pt-BR"
     },
     {
       icon: <Phone size={22} />,
@@ -26,6 +26,12 @@ export default function ContactPage() {
       label: "E-mail Geral",
       value: "comercial@portabelly.com.br",
       link: "mailto:comercial@portabelly.com.br"
+    },
+    {
+      icon: <Mail size={22} />,
+      label: "E-mail Alternativo",
+      value: "comerciallalvorada@gmail.com",
+      link: "mailto:comerciallalvorada@gmail.com"
     },
     {
       icon: <Clock size={22} />,
@@ -110,7 +116,7 @@ export default function ContactPage() {
                 <div className="map-iframe-wrapper">
                   <iframe
                     title="Localização Fábrica PortáBelly"
-                    src="https://maps.google.com/maps?q=Rua%20Marechal%20Hermes%20da%20Fonseca,%20173,%20Renascen%C3%A7a%20-%20PR&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=-26.1557996,-52.9691905&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"
                     style={{ border: 0 }}

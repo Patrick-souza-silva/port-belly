@@ -20,7 +20,7 @@ export default function Footer() {
               <img src="/images/logos/logo-branca.png" alt="Portábelly Indústria de Portas" className="footer-logo-img-large" />
             </div>
             <p className="footer-brand-desc">
-              Mais de 55 anos de experiência transformando a nobreza da madeira em esquadrias de alto padrão. Projetadas no Paraná, entregues em todo o Brasil.
+              Mais de 58 anos de experiência transformando a nobreza da madeira em esquadrias de alto padrão. Projetadas no Paraná, entregues em todo o Brasil.
             </p>
             <div className="footer-social-links">
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Siga-nos no Instagram">
@@ -59,18 +59,26 @@ export default function Footer() {
           <div className="footer-col contact-col">
             <h4 className="footer-col-title">Fábrica <span className="brand-name">PortáBelly</span></h4>
             <p className="footer-info-text">
-              Rua Marechal Hermes da Fonseca, 173<br />
-              Bairro Industrial, Renascença - PR<br />
-              CEP: 85610-000
+              Rua Marechal H. da Fonseca, S/N<br />
+              Industrial II, Renascença - PR<br />
+              CEP: 85.611-503
             </p>
             <p className="footer-info-phone">
               <a href="tel:+554635501184" className="footer-phone-link">
                 (46) 3550-1184
               </a>
+              <br />
+              <a href="https://wa.me/5546991012844" target="_blank" rel="noopener noreferrer" className="footer-phone-link">
+                (46) 99101-2844
+              </a>
             </p>
             <p className="footer-info-email">
               <a href="mailto:comercial@portabelly.com.br" className="footer-email-link">
                 comercial@portabelly.com.br
+              </a>
+              <br />
+              <a href="mailto:comerciallalvorada@gmail.com" className="footer-email-link">
+                comerciallalvorada@gmail.com
               </a>
             </p>
           </div>
@@ -81,7 +89,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copy-text">
-              © {new Date().getFullYear()} PortáBelly (Móveis e Esquadrias Alvorada Ltda). Todos os direitos reservados.
+              © {new Date().getFullYear()} PortáBelly. Todos os direitos reservados.
             </p>
             <p className="footer-credits-text">
               Desenvolvido com sofisticação e precisão técnica.

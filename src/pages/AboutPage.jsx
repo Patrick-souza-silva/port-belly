@@ -4,24 +4,46 @@ import { Award, Compass, ShieldCheck, TreePine, History, Landmark, Settings } fr
 export default function AboutPage() {
   const brandMilestones = [
     {
-      year: "1976",
+      year: "1968",
+      title: "Fundação da Empresa",
+      description: "Início das atividades em Renascença-PR, produzindo móveis e esquadrias de madeira.",
       image: "/images/empresa/imagem-empresa-1976.jpg"
     },
     {
-      year: "1990",
+      year: "1973",
+      title: "Expansão da Produção",
+      description: "Ampliação da linha produtiva com portas, compensados, madeira serrada e laminada.",
       image: "/images/empresa/imagem-empresa- 1990.jpeg"
     },
     {
-      year: "2000",
+      year: "Anos 80 e 90",
+      title: "Crescimento e Consolidação",
+      description: "Ampliação da estrutura industrial e fortalecimento da marca.",
+      image: null
+    },
+    {
+      year: "Anos 2000",
+      title: "Modernização Industrial",
+      description: "Investimentos em tecnologia, equipamentos e qualificação profissional.",
       image: "/images/empresa/imagem-empresa-2000.jpeg"
     },
     {
-      year: "2018",
+      year: "Anos 2010",
+      title: "Sustentabilidade e Inovação",
+      description: "Aprimoramento dos processos e compromisso com a gestão responsável dos recursos naturais.",
       image: "/images/empresa/imagem-empresa-2018.jpeg"
     },
     {
-      year: "2024",
+      year: "Anos 2020",
+      title: "Presença Nacional",
+      description: "Expansão da atuação comercial para diversas regiões do Brasil.",
       image: "/images/empresa/imagem-empresa-2024.jpeg"
+    },
+    {
+      year: "2026",
+      title: "58 Anos de História",
+      description: "Celebração de mais de meio século de tradição, qualidade e inovação.",
+      image: null
     }
   ];
 
@@ -64,18 +86,30 @@ export default function AboutPage() {
         <div className="container narrative-container">
           <div className="narrative-text-col reveal reveal-fade-in-left">
             <span className="narrative-tag">A EMPRESA</span>
-            <h2 className="narrative-title">Mais de Meio Século de Sucesso e Paixão Pela Madeira</h2>
+            <h2 className="narrative-title">Histórico da Móveis e Esquadrias Alvorada / Portabelly</h2>
             
             <p className="narrative-paragraph">
-              A <strong>PortáBelly</strong> não surgiu do acaso. Nossa essência técnica e artística foi forjada a partir de 1968, na acolhedora cidade de <strong>Renascença, no estado do Paraná</strong>, sob o nome de Móveis e Esquadrias Alvorada. Desde os primeiros passos, o objetivo de nossa família de artesãos foi o mesmo: entregar a nobreza e a segurança da melhor madeira sob a forma de portas deslumbrantes.
+              A Empresa e Esquadrias Alvorada Ltda. iniciou sua trajetória em março de 1968, na cidade de Renascença, Paraná, fabricando móveis e esquadrias de madeira em um barracão de aproximadamente 200 m².
             </p>
             
             <p className="narrative-paragraph">
-              A transição para <strong>PortáBelly</strong> representa nossa maior evolução de marca e infraestrutura. Modernizamos completamente o parque de maquinários da fábrica e repensamos as nossas técnicas de finalização estética. Hoje, combinamos a sensibilidade humana do entalhe de precisão e seleção de lâminas de madeira à altíssima engenharia industrial contemporânea.
+              Com o crescimento da empresa e a expansão do mercado, em 1973 ampliou sua linha de produção, passando a fabricar portas, compensados, madeira serrada e laminada, consolidando-se como uma importante indústria do setor madeireiro.
             </p>
 
             <p className="narrative-paragraph">
-              O resultado são portas com isolamento acústico exemplar, superfícies de suavidade incomparável ao toque e uma solidez que protege e embeleza residências de luxo e empreendimentos imobiliários de alto padrão em todo o território nacional.
+              Ao longo de mais de cinco décadas, a empresa construiu sua história baseada em trabalho, dedicação, qualidade, inovação e responsabilidade socioambiental. Esses valores contribuíram para o fortalecimento da marca e para o desenvolvimento econômico da região Sudoeste do Paraná.
+            </p>
+
+            <p className="narrative-paragraph">
+              Atualmente, a Portas Alvorada e Portabelly é reconhecida pela fabricação de portas de madeira e produtos derivados, atendendo clientes em diversas regiões do Brasil e exterior. A empresa mantém o compromisso com a excelência, investindo continuamente em tecnologia, processos produtivos e qualificação de seus colaboradores.
+            </p>
+
+            <p className="narrative-paragraph">
+              Com mais de 58 anos de história, a empresa permanece como referência no segmento de portas internas, unindo tradição, experiência e inovação para oferecer produtos de alta qualidade.
+            </p>
+
+            <p className="narrative-paragraph">
+              <strong>PORTABELLY – De portas abertas para o futuro.</strong>
             </p>
           </div>
 
@@ -101,6 +135,9 @@ export default function AboutPage() {
             <span className="timeline-tag">LINHA DO TEMPO</span>
             <h2 className="timeline-title">Nossa Jornada ao Longo das Décadas</h2>
             <div className="timeline-bar"></div>
+            <p style={{ marginTop: '1.5rem', color: 'var(--text-muted)', fontStyle: 'italic', fontSize: '1.1rem', maxWidth: '80%', margin: '1.5rem auto 0' }}>
+              "Desde 1968, a Alvorada transforma madeira em qualidade, tradição e confiança, abrindo portas para novas histórias em todo o Brasil."
+            </p>
           </div>
 
           <div className="timeline-flow">
@@ -119,6 +156,16 @@ export default function AboutPage() {
                   <div className="timeline-card-body">
                     <span className="timeline-year">{milestone.year}</span>
                     <div className="timeline-year-line"></div>
+                    {milestone.title && (
+                      <h3 style={{ marginTop: '1.25rem', color: 'var(--primary-dark)', fontSize: '1.2rem', fontWeight: 700 }}>
+                        {milestone.title}
+                      </h3>
+                    )}
+                    {milestone.description && (
+                      <p style={{ marginTop: '0.5rem', color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                        {milestone.description}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="timeline-dot">
@@ -428,7 +475,7 @@ export default function AboutPage() {
           border-radius: var(--radius-sm); /* Sharp high-end architectural borders */
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.015), inset 0 0 0 1px rgba(197, 160, 89, 0.08);
           width: 100%;
-          max-width: 420px;
+          max-width: 500px;
           transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
           overflow: hidden;
           cursor: pointer;
@@ -451,7 +498,7 @@ export default function AboutPage() {
 
         .timeline-card-image-wrapper {
           width: 100%;
-          height: 240px;
+          height: 300px;
           overflow: hidden;
           position: relative;
           border: 1px solid rgba(0, 0, 0, 0.03);
@@ -463,7 +510,7 @@ export default function AboutPage() {
         .timeline-card-img {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
           filter: grayscale(15%) sepia(8%);
           transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -525,7 +572,7 @@ export default function AboutPage() {
           align-items: center;
           justify-content: center;
           position: absolute;
-          top: 130px; /* Aligned vertically with center of card */
+          top: 150px; /* Aligned vertically with center of card */
           z-index: 5;
           transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
           box-shadow: 0 4px 12px rgba(81, 1, 1, 0.05);
@@ -578,7 +625,7 @@ export default function AboutPage() {
         }
 
         .timeline-card:hover .timeline-card-image-wrapper {
-          height: 260px; /* Seamless expansion */
+          height: 320px; /* Seamless expansion */
         }
 
         .timeline-card:hover .timeline-card-img {
@@ -750,7 +797,7 @@ export default function AboutPage() {
           .timeline-step.right .timeline-dot {
             left: -1px;
             right: auto;
-            top: 100px; /* Centered nicely on more compact mobile cards */
+            top: 130px; /* Centered nicely on more compact mobile cards */
           }
 
           .timeline-step.left .timeline-card,
