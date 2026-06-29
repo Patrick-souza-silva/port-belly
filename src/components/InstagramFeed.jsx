@@ -125,7 +125,7 @@ export default function InstagramFeed() {
             <Sparkles size={14} className="insta-badge-icon" />
             <span>Conexão Digital</span>
           </div>
-          <h2 className="insta-title font-walkway">ACOMPANHE A <span className="brand-name">PORTABELLY</span> NO INSTAGRAM</h2>
+          <h2 className="insta-title">Acompanhe a <span className="brand-name">PortáBelly</span> no Instagram</h2>
           <div className="insta-divider"></div>
           <p className="insta-subtitle">
             Fique por dentro dos nossos lançamentos, linhas de produtos, novidades da fábrica e conteúdos exclusivos para revendas, distribuidores e parceiros comerciais.

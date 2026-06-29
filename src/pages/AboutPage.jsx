@@ -13,13 +13,13 @@ export default function AboutPage() {
       year: "1973",
       title: "Expansão da Produção",
       description: "Ampliação da linha produtiva com portas, compensados, madeira serrada e laminada.",
-      image: "/images/empresa/imagem-empresa- 1990.jpeg"
+      image: null
     },
     {
       year: "Anos 80 e 90",
       title: "Crescimento e Consolidação",
       description: "Ampliação da estrutura industrial e fortalecimento da marca.",
-      image: null
+      image: "/images/empresa/imagem-empresa- 1990.jpeg"
     },
     {
       year: "Anos 2000",
@@ -140,39 +140,48 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="timeline-flow">
-            {brandMilestones.map((milestone, idx) => (
-              <div className={`timeline-step ${idx % 2 === 0 ? 'left' : 'right'}`} key={idx}>
-                <div className={`timeline-card reveal ${idx % 2 === 0 ? 'reveal-fade-in-left' : 'reveal-fade-in-right'} delay-${((idx % 3) + 1) * 150}`}>
-                  {milestone.image && (
-                    <div className="timeline-card-image-wrapper">
-                      <img 
-                        src={milestone.image} 
-                        alt={`PortáBelly ${milestone.year}`} 
-                        className="timeline-card-img" 
-                      />
+          <div className="timeline-modern">
+            <div className="timeline-modern-line"></div>
+            {brandMilestones.map((milestone, idx) => {
+              const hasImage = !!milestone.image;
+              const alignClass = hasImage ? (idx % 2 === 0 ? 'left' : 'right') : 'center';
+
+              return (
+                <div className={`timeline-modern-row ${alignClass}`} key={idx}>
+                  
+                  <div className="timeline-modern-content reveal">
+                    <div className="modern-year-box">
+                      <span className="modern-year">{milestone.year}</span>
                     </div>
-                  )}
-                  <div className="timeline-card-body">
-                    <span className="timeline-year">{milestone.year}</span>
-                    <div className="timeline-year-line"></div>
                     {milestone.title && (
-                      <h3 style={{ marginTop: '1.25rem', color: 'var(--primary-dark)', fontSize: '1.2rem', fontWeight: 700 }}>
-                        {milestone.title}
-                      </h3>
+                      <h3 className="modern-title">{milestone.title}</h3>
                     )}
                     {milestone.description && (
-                      <p style={{ marginTop: '0.5rem', color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                        {milestone.description}
-                      </p>
+                      <p className="modern-desc">{milestone.description}</p>
                     )}
                   </div>
+
+                  {!hasImage ? null : (
+                    <div className="timeline-modern-dot">
+                      <div className="dot-inner"></div>
+                    </div>
+                  )}
+
+                  {hasImage && (
+                    <div className="timeline-modern-image reveal">
+                      <div className="modern-img-wrapper">
+                        <img 
+                          src={milestone.image} 
+                          alt={`PortáBelly ${milestone.year}`} 
+                          className="modern-img" 
+                        />
+                      </div>
+                    </div>
+                  )}
+
                 </div>
-                <div className="timeline-dot">
-                  <History size={16} />
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -408,259 +417,176 @@ export default function AboutPage() {
           color: var(--primary-dark);
         }
 
-        .timeline-bar {
-          width: 80px;
-          height: 3px;
-          background-color: var(--accent-gold);
-          margin: 1.5rem auto 0;
-        }
-
-        /* Timeline flow alignment */
-        .timeline-flow {
+        /* Modern Magazine Timeline */
+        .timeline-modern {
           position: relative;
-          max-width: 900px;
+          max-width: 1000px;
           margin: 0 auto;
-          padding: 2rem 0;
+          padding: 3rem 0;
           display: flex;
           flex-direction: column;
+          gap: 6rem;
         }
 
-        /* Luxury Glowing Gradient Central Track */
-        .timeline-flow::before {
-          content: '';
+        .timeline-modern-line {
           position: absolute;
           top: 0;
           bottom: 0;
           left: 50%;
-          width: 4px;
-          background: linear-gradient(to bottom, 
-            transparent 0%, 
-            var(--primary) 15%, 
-            var(--accent-gold) 50%, 
-            var(--primary) 85%, 
-            transparent 100%
-          );
+          width: 2px;
+          background: linear-gradient(to bottom, transparent, var(--accent-gold), transparent);
           transform: translateX(-50%);
-          box-shadow: 0 0 12px rgba(197, 160, 89, 0.2);
-        }
-
-        .timeline-step {
-          display: flex;
-          position: relative;
-          width: 50%;
-          margin-bottom: 5rem;
-        }
-
-        .timeline-step.left {
-          align-self: flex-start;
-          justify-content: flex-end;
-          padding-right: 45px;
-          left: 0;
-        }
-
-        .timeline-step.right {
-          align-self: flex-end;
-          justify-content: flex-start;
-          padding-left: 45px;
-          margin-left: auto;
-          left: 0;
-        }
-
-        /* Deluxe Passepartout Card Design */
-        .timeline-card {
-          position: relative;
-          background-color: var(--bg-white);
-          border: 1px solid rgba(81, 1, 1, 0.05);
-          padding: 1.5rem; /* Passepartout framing padding */
-          border-radius: var(--radius-sm); /* Sharp high-end architectural borders */
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.015), inset 0 0 0 1px rgba(197, 160, 89, 0.08);
-          width: 100%;
-          max-width: 500px;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          overflow: hidden;
-          cursor: pointer;
-          z-index: 2;
-        }
-
-        /* Double dashed bezel inside the passepartout */
-        .timeline-card::after {
-          content: '';
-          position: absolute;
-          top: 0.75rem;
-          left: 0.75rem;
-          right: 0.75rem;
-          bottom: 0.75rem;
-          border: 1px dashed rgba(197, 160, 89, 0.2);
-          pointer-events: none;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          z-index: 2;
-        }
-
-        .timeline-card-image-wrapper {
-          width: 100%;
-          height: 300px;
-          overflow: hidden;
-          position: relative;
-          border: 1px solid rgba(0, 0, 0, 0.03);
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          background-color: #f7f5f0;
           z-index: 1;
         }
 
-        .timeline-card-img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          filter: grayscale(15%) sepia(8%);
-          transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .timeline-card-body {
-          padding-top: 1.25rem;
-          text-align: center;
+        .timeline-modern-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
           position: relative;
-          z-index: 3;
+          z-index: 2;
+          width: 100%;
         }
 
-        /* Embossed Gold leaf typography for the years */
-        .timeline-year {
-          font-family: var(--font-secondary);
-          font-size: 1.8rem;
+        .timeline-modern-row.left {
+          flex-direction: row;
+        }
+
+        .timeline-modern-row.right {
+          flex-direction: row-reverse;
+        }
+        
+        .timeline-modern-row.center {
+          justify-content: center;
+        }
+
+        .timeline-modern-content {
+          width: 45%;
+          padding: 2rem;
+        }
+
+        .timeline-modern-row.left .timeline-modern-content {
+          text-align: right;
+        }
+        
+        .timeline-modern-row.right .timeline-modern-content {
+          text-align: left;
+        }
+
+        .timeline-modern-row.center .timeline-modern-content {
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          padding: 3rem 2rem;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(8px);
+          border-radius: 12px;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+          border: 1px solid rgba(197, 160, 89, 0.2);
+          position: relative;
+          z-index: 4;
+        }
+
+        .modern-year-box {
+          margin-bottom: 1rem;
+        }
+
+        .modern-year {
+          font-family: var(--font-primary);
+          font-size: 3.5rem;
           font-weight: 900;
           background: linear-gradient(135deg, var(--accent-gold-dark) 0%, var(--accent-gold) 50%, var(--accent-gold-dark) 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          display: inline-block;
-          margin: 0;
-          letter-spacing: 0.05em;
-          transition: all 0.4s ease;
+          line-height: 1;
+          letter-spacing: -1px;
         }
 
-        /* Dynamic expanding line under the year */
-        .timeline-year-line {
-          width: 30px;
-          height: 2px;
-          background-color: var(--accent-gold);
-          margin: 0.5rem auto 0;
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          opacity: 0.6;
+        .modern-title {
+          font-family: var(--font-primary);
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--primary-dark);
+          margin-bottom: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
         }
 
-        /* Bottom Luxury Expansion Edge */
-        .timeline-card::before {
-          content: '';
+        .modern-desc {
+          color: var(--text-muted);
+          font-size: 1.05rem;
+          line-height: 1.6;
+        }
+
+        .timeline-modern-dot {
           position: absolute;
-          bottom: 0;
           left: 50%;
-          width: 0%;
-          height: 3px;
-          background: linear-gradient(90deg, var(--primary) 0%, var(--accent-gold) 50%, var(--primary) 100%);
-          transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-          transform: translateX(-50%);
-          z-index: 4;
-        }
-
-        /* Interactive Timeline Dot */
-        .timeline-dot {
-          width: 42px;
-          height: 42px;
-          background-color: var(--bg-white);
-          color: var(--primary);
-          border: 2px solid var(--primary);
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: 32px;
+          height: 32px;
+          background: var(--bg-white);
+          border: 2px solid var(--accent-gold);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          position: absolute;
-          top: 150px; /* Aligned vertically with center of card */
-          z-index: 5;
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          box-shadow: 0 4px 12px rgba(81, 1, 1, 0.05);
+          z-index: 3;
+          box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
         }
 
-        .timeline-dot svg {
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          opacity: 0.7;
-        }
-
-        /* Expanding halo */
-        .timeline-dot::after {
-          content: '';
-          position: absolute;
-          top: -6px;
-          left: -6px;
-          right: -6px;
-          bottom: -6px;
-          border: 1px solid var(--accent-gold);
+        .dot-inner {
+          width: 12px;
+          height: 12px;
+          background: var(--primary-dark);
           border-radius: 50%;
-          opacity: 0;
-          transform: scale(0.85);
-          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-          pointer-events: none;
+          transition: all 0.3s ease;
+        }
+        
+        .timeline-modern-row:hover .dot-inner {
+          background: var(--accent-gold);
+          transform: scale(1.5);
         }
 
-        .timeline-step.left .timeline-dot {
-          right: -21px;
+        .timeline-modern-image {
+          width: 45%;
+          position: relative;
         }
 
-        .timeline-step.right .timeline-dot {
-          left: -21px;
-        }
-
-        /* Interactive Hover Transitions triggered on Passepartout card */
-        .timeline-card:hover {
-          transform: translateY(-8px);
-          border-color: rgba(81, 1, 1, 0.15);
-          box-shadow: 0 25px 65px rgba(81, 1, 1, 0.08), inset 0 0 0 1px rgba(197, 160, 89, 0.25);
-          padding: 1rem; /* Frame mat shrinks, image gets bigger! */
-        }
-
-        .timeline-card:hover::after {
-          top: 0.5rem;
-          left: 0.5rem;
-          right: 0.5rem;
-          bottom: 0.5rem;
-          border-color: var(--accent-gold);
-          border-style: solid;
-        }
-
-        .timeline-card:hover .timeline-card-image-wrapper {
-          height: 320px; /* Seamless expansion */
-        }
-
-        .timeline-card:hover .timeline-card-img {
-          transform: scale(1.06);
-          filter: grayscale(0%) sepia(0%);
-        }
-
-        .timeline-card:hover .timeline-year-line {
-          width: 70px;
-          background-color: var(--primary);
-          opacity: 1;
-        }
-
-        .timeline-card:hover::before {
+        .modern-img-wrapper {
           width: 100%;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+          display: flex;
         }
 
-        /* Hover interaction propagated to siblings (Adjacent Sibling selector works since card is first in HTML) */
-        .timeline-card:hover + .timeline-dot {
-          background-color: var(--primary);
-          color: var(--text-white);
-          border-color: var(--accent-gold);
-          transform: scale(1.15);
-          box-shadow: 0 0 22px rgba(81, 1, 1, 0.25);
+        .modern-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          transition: transform 0.7s ease;
         }
 
-        .timeline-card:hover + .timeline-dot svg {
-          transform: rotate(360deg);
-          opacity: 1;
+        .timeline-modern-row:hover .modern-img {
+          transform: scale(1.05);
         }
 
-        .timeline-card:hover + .timeline-dot::after {
-          opacity: 1;
-          transform: scale(1);
-          animation: pulseGold 2s infinite;
+        .modern-img-placeholder {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: linear-gradient(135deg, rgba(197, 160, 89, 0.05) 0%, rgba(197, 160, 89, 0.15) 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px dashed rgba(197, 160, 89, 0.3);
+        }
+        
+        .placeholder-icon {
+          color: rgba(197, 160, 89, 0.4);
+          width: 48px;
+          height: 48px;
         }
 
         /* Technology / Quality Pillars Section */
@@ -774,38 +700,33 @@ export default function AboutPage() {
         }
 
         @media (max-width: 768px) {
-          .timeline-flow::before {
+          .timeline-modern {
+            gap: 4rem;
+            padding: 2rem 0;
+          }
+          .timeline-modern-line {
             left: 20px;
           }
-
-          .timeline-step {
+          .timeline-modern-row {
+            flex-direction: column !important;
+            align-items: flex-start;
+          }
+          .timeline-modern-dot {
+            left: 20px;
+            top: 25px;
+            transform: translate(-50%, -50%);
+          }
+          .timeline-modern-content {
             width: 100%;
-            padding-left: 45px;
-            padding-right: 0;
-            margin-bottom: 3.5rem;
+            padding: 0 0 1.5rem 50px;
+            text-align: left !important;
           }
-
-          .timeline-step.left, .timeline-step.right {
-            justify-content: flex-start;
-            left: 0;
-            margin-left: 0;
-            padding-left: 45px;
-            padding-right: 0;
+          .modern-year {
+            font-size: 2.5rem;
           }
-
-          .timeline-step.left .timeline-dot,
-          .timeline-step.right .timeline-dot {
-            left: -1px;
-            right: auto;
-            top: 130px; /* Centered nicely on more compact mobile cards */
-          }
-
-          .timeline-step.left .timeline-card,
-          .timeline-step.right .timeline-card {
+          .timeline-modern-image {
             width: 100%;
-            max-width: 100%;
-            margin-left: 0;
-            margin-right: 0;
+            padding-left: 50px;
           }
           
           .narrative-graphics-col {

@@ -10,12 +10,6 @@ export default function ContactPage() {
       link: "https://maps.google.com/maps?q=-26.1557996%2C-52.9691905&z=17&hl=pt-BR"
     },
     {
-      icon: <Phone size={22} />,
-      label: "Fixo de Atendimento",
-      value: "(46) 3550-1184",
-      link: "tel:+554635501184"
-    },
-    {
       icon: <Smartphone size={22} />,
       label: "WhatsApp Comercial",
       value: "(46) 99101-2844",
@@ -23,13 +17,7 @@ export default function ContactPage() {
     },
     {
       icon: <Mail size={22} />,
-      label: "E-mail Geral",
-      value: "comercial@portabelly.com.br",
-      link: "mailto:comercial@portabelly.com.br"
-    },
-    {
-      icon: <Mail size={22} />,
-      label: "E-mail Alternativo",
+      label: "E-mail",
       value: "comerciallalvorada@gmail.com",
       link: "mailto:comerciallalvorada@gmail.com"
     },
