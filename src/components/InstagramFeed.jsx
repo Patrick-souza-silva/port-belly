@@ -63,7 +63,7 @@ export default function InstagramFeed() {
     }
   }, []);
 
-  // Postagens reais e ilustrativas curadas da PortáBelly para o modo interativo de alta costura
+  // Postagens reais e ilustrativas curadas da Portábelly para o modo interativo de alta costura
   const mockPosts = [
     {
       id: 1,
@@ -94,7 +94,7 @@ export default function InstagramFeed() {
       image: "/images/solid-wood-door.png",
       likes: 305,
       comments: 47,
-      caption: "A imponência e a segurança de uma porta maciça legítima PortáBelly. Luxo e durabilidade incomparáveis. 🛡️🏠",
+      caption: "A imponência e a segurança de uma porta maciça legítima Portábelly. Luxo e durabilidade incomparáveis. 🛡️🏠",
       link: "https://www.instagram.com/portabellyportas"
     },
     {
@@ -125,7 +125,7 @@ export default function InstagramFeed() {
             <Sparkles size={14} className="insta-badge-icon" />
             <span>Conexão Digital</span>
           </div>
-          <h2 className="insta-title">Acompanhe a <span className="brand-name">PortáBelly</span> no Instagram</h2>
+          <h2 className="insta-title">Acompanhe a <span className="brand-name">Portábelly</span> no Instagram</h2>
           <div className="insta-divider"></div>
           <p className="insta-subtitle">
             Fique por dentro dos nossos lançamentos, linhas de produtos, novidades da fábrica e conteúdos exclusivos para revendas, distribuidores e parceiros comerciais.
@@ -191,7 +191,7 @@ export default function InstagramFeed() {
                     <div className="insta-post-img-container">
                       <img 
                         src={post.image} 
-                        alt={`Instagram PortáBelly Post - ${post.id}`} 
+                        alt={`Instagram Portábelly Post - ${post.id}`} 
                         className="insta-post-img" 
                         loading="lazy"
                       />

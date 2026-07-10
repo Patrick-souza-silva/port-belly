@@ -15,7 +15,7 @@ export default function About() {
     },
     {
       icon: <ShieldCheck className="about-icon" size={24} />,
-      title: "Qualidade PortáBelly",
+      title: "Qualidade Portábelly",
       description: "Padrão industrial rigoroso de secagem e montagem que previne empenamentos e garante durabilidade infinita."
     }
   ];
@@ -27,7 +27,7 @@ export default function About() {
         <div className="about-content">
           <span className="about-subtitle">NOSSA HISTÓRIA</span>
           <h2 className="about-title">
-            De <strong>Portas Alvorada</strong> para <strong><span className="brand-name">PortáBelly</span></strong>: Uma Evolução de Tradição e Elegância
+            De <strong>Portas Alvorada</strong> para <strong><span className="brand-name">Portábelly</span></strong>: Uma Evolução de Tradição e Elegância
           </h2>
           
           <p className="about-text">
@@ -35,7 +35,7 @@ export default function About() {
           </p>
 
           <p className="about-text">
-            Hoje, como <strong>PortáBelly</strong>, expandimos nosso horizonte técnico e estético. Nossa fábrica renovou todo o maquinário operacional e modernizou os acabamentos de nossas coleções para entregar o que há de mais luxuoso em esquadrias, integrando o carinho artesanal tradicional com alta tecnologia moderna.
+            Hoje, como <strong>Portábelly</strong>, expandimos nosso horizonte técnico e estético. Nossa fábrica renovou todo o maquinário operacional e modernizou os acabamentos de nossas coleções para entregar o que há de mais luxuoso em esquadrias, integrando o carinho artesanal tradicional com alta tecnologia moderna.
           </p>
 
           {/* Key Brand Pillars */}
@@ -57,7 +57,7 @@ export default function About() {
           <div className="about-img-frame">
             <img 
               src="/images/laminated-door.png" 
-              alt="Fábrica da PortáBelly" 
+              alt="Fábrica da Portábelly" 
               className="about-large-img"
             />
             {/* Float Highlight Badge */}

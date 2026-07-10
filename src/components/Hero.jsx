@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            A antiga <strong>Portas Alvorada</strong> agora é <strong>PortáBelly</strong>. Uma nova marca, com a mesma tradição de qualidade inabalável e inovação constante. Fabricamos as portas que dão vida, segurança e sofisticação aos seus projetos.
+            A antiga <strong>Portas Alvorada</strong> agora é <strong>Portábelly</strong>. Uma nova marca, com a mesma tradição de qualidade inabalável e inovação constante. Fabricamos as portas que dão vida, segurança e sofisticação aos seus projetos.
           </p>
 
           {/* CTA Buttons */}

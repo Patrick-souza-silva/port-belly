@@ -6,25 +6,25 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     // Dynamic SEO Setup based on active page route to boost Google ranking
-    let pageTitle = "PortáBelly - Fábrica de Portas Premium | Renascença - PR";
-    let pageDesc = "PortáBelly (antiga Portas Alvorada). Fábrica de portas de madeira nobres no Sudoeste do Paraná. Tradição desde 1968 em Renascença - PR.";
+    let pageTitle = "Portábelly - Fábrica de Portas Premium | Renascença - PR";
+    let pageDesc = "Portábelly (antiga Portas Alvorada). Fábrica de portas de madeira nobres no Sudoeste do Paraná. Tradição desde 1968 em Renascença - PR.";
 
     switch (pathname) {
       case '/':
-        pageTitle = "PortáBelly - Fábrica de Portas Premium | Renascença - PR";
-        pageDesc = "PortáBelly (antiga Portas Alvorada). Fábrica de portas de alto padrão e kit porta pronta em Renascença - PR. Tradição e qualidade no Sudoeste do Paraná.";
+        pageTitle = "Portábelly - Fábrica de Portas Premium | Renascença - PR";
+        pageDesc = "Portábelly (antiga Portas Alvorada). Fábrica de portas de alto padrão e kit porta pronta em Renascença - PR. Tradição e qualidade no Sudoeste do Paraná.";
         break;
       case '/sobre':
-        pageTitle = "Sobre Nós - PortáBelly | Fábrica de Portas desde 1968";
-        pageDesc = "Conheça a história e tradição de mais de 55 anos da PortáBelly na fabricação de portas de madeira de reflorestamento em Renascença, Pato Branco e Francisco Beltrão.";
+        pageTitle = "Sobre Nós - Portábelly | Fábrica de Portas desde 1968";
+        pageDesc = "Conheça a história e tradição de mais de 55 anos da Portábelly na fabricação de portas de madeira de reflorestamento em Renascença, Pato Branco e Francisco Beltrão.";
         break;
       case '/produtos':
         pageTitle = "Produtos & Portas de Madeira - Portábelly | Indústria de Portas";
         pageDesc = "Conheça nossas novas linhas de portas de madeira de alto padrão: Kit BellyPlac, portas frisadas, lisas para verniz, semi-ocas e camarão. Solicite orçamentos direto de fábrica.";
         break;
       case '/contato':
-        pageTitle = "Fale Conosco e Orçamentos - PortáBelly | Fábrica de Portas";
-        pageDesc = "Entre em contato direto com a fábrica da PortáBelly em Renascença - PR. Envie seu projeto e solicite orçamento de portas para o PR, SC e RS.";
+        pageTitle = "Fale Conosco e Orçamentos - Portábelly | Fábrica de Portas";
+        pageDesc = "Entre em contato direto com a fábrica da Portábelly em Renascença - PR. Envie seu projeto e solicite orçamento de portas para o PR, SC e RS.";
         break;
       default:
         break;

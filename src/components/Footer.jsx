@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Factory Info Column */}
           <div className="footer-col contact-col">
-            <h4 className="footer-col-title">Fábrica <span className="brand-name">PortáBelly</span></h4>
+            <h4 className="footer-col-title">Fábrica <span className="brand-name">Portábelly</span></h4>
             <p className="footer-info-text">
               Rua Marechal H. da Fonseca, S/N<br />
               Industrial II, Renascença - PR<br />
@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copy-text">
-              © {new Date().getFullYear()} PortáBelly. Todos os direitos reservados.
+              © {new Date().getFullYear()} Portábelly. Todos os direitos reservados.
             </p>
             <p className="footer-credits-text">
               Desenvolvido com sofisticação e precisão técnica.

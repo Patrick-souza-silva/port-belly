@@ -49,10 +49,10 @@ export default function Home() {
         <div className="container home-hero-container">
           <div className="home-hero-content animate-fade-in-up">
             <div className="home-hero-badge">
-              <span><span className="brand-name">PortáBelly</span> de portas abertas para o futuro</span>
+              <span><span className="brand-name">Portábelly</span> de portas abertas para o futuro</span>
             </div>
             <h1 className="home-hero-title font-walkway">
-              Portas ALVORADA e <span className="brand-name">PortáBelly</span> <span className="title-accent">uniram-se</span>
+              Portas ALVORADA e <span className="brand-name">Portábelly</span> <span className="title-accent">uniram-se</span>
             </h1>
             <p className="home-hero-desc hero-accent-lead">
               e, agora estão mais fortes e preparadas para oferecer o que há de melhor na linha de portas internas.
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="container">
           <div className="home-section-header reveal reveal-fade-in-up">
             <span className="home-section-tag">DIFERENCIAIS</span>
-            <h2 className="home-section-title font-walkway">Por Que Escolher a <span className="brand-name">PortáBelly</span>?</h2>
+            <h2 className="home-section-title font-walkway">Por Que Escolher a <span className="brand-name">Portábelly</span>?</h2>
             <div className="section-bar"></div>
           </div>
 
@@ -109,7 +109,7 @@ export default function Home() {
           </div>
           <div className="teaser-content reveal reveal-fade-in-right">
             <span className="teaser-tag">NOSSA HISTÓRIA</span>
-            <h2 className="teaser-title font-walkway"><span className="brand-name">PortáBelly</span> Indústria de Portas vem renovada</h2>
+            <h2 className="teaser-title font-walkway"><span className="brand-name">Portábelly</span> Indústria de Portas vem renovada</h2>
             <p className="teaser-text">
               Com sucesso consolidado e, principalmente, mantém a origem e princípios familiar.
             </p>
@@ -170,7 +170,7 @@ export default function Home() {
             <div className="cta-buttons-wrapper">
               <a 
                 href="/catalogo-portabelly.pdf" 
-                download="Catalogo-Portabelly.pdf" 
+                download="catalogo-portabelly.pdf" 
                 className="cta-btn-gold"
               >
                 <Download size={18} />

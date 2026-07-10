@@ -82,7 +82,7 @@ export default function ContactPage() {
                 </div>
                 <p>Converse agora mesmo com a nossa equipe de engenharia e vendas técnicas para solicitar orçamentos, tirar dúvidas ou enviar plantas estruturais.</p>
                 <a
-                  href="https://wa.me/5546991012844?text=Olá,%20gostaria%20de%20conversar%20sobre%20as%20portas%20da%20PortáBelly!"
+                  href="https://wa.me/5546991012844?text=Olá,%20gostaria%20de%20conversar%20sobre%20as%20portas%20da%20Portábelly!"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary direct-wa-btn"
@@ -103,7 +103,7 @@ export default function ContactPage() {
                 {/* Full Responsive Live Map */}
                 <div className="map-iframe-wrapper">
                   <iframe
-                    title="Localização Fábrica PortáBelly"
+                    title="Localização Fábrica Portábelly"
                     src="https://maps.google.com/maps?q=-26.1557996,-52.9691905&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="450"

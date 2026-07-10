@@ -101,7 +101,7 @@ export default function Contact() {
             {/* Embedded Live Map */}
             <div className="contact-map-wrapper">
               <iframe
-                title="Localização Fábrica PortáBelly"
+                title="Localização Fábrica Portábelly"
                 src="https://maps.google.com/maps?q=Rua%20Marechal%20Hermes%20da%20Fonseca,%20173,%20Renascen%C3%A7a%20-%20PR&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="280"

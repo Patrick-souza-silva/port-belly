@@ -75,7 +75,7 @@ export default function AboutPage() {
             <span className="banner-subtitle">CONHEÇA NOSSA HISTÓRIA</span>
             <h1 className="banner-title">Tradição & Evolução Tecnológica</h1>
             <p className="banner-lead">
-              A história da Portas Alvorada que se renova com a precisão e o requinte da PortáBelly.
+              A história da Portas Alvorada que se renova com a precisão e o requinte da Portábelly.
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="container narrative-container">
           <div className="narrative-text-col reveal reveal-fade-in-left">
             <span className="narrative-tag">A EMPRESA</span>
-            <h2 className="narrative-title">Histórico da Móveis e Esquadrias Alvorada / Portabelly</h2>
+            <h2 className="narrative-title">Histórico da Móveis e Esquadrias Alvorada / Portábelly</h2>
             
             <p className="narrative-paragraph">
               A Empresa e Esquadrias Alvorada Ltda. iniciou sua trajetória em março de 1968, na cidade de Renascença, Paraná, fabricando móveis e esquadrias de madeira em um barracão de aproximadamente 200 m².
@@ -101,7 +101,7 @@ export default function AboutPage() {
             </p>
 
             <p className="narrative-paragraph">
-              Atualmente, a Portas Alvorada e Portabelly é reconhecida pela fabricação de portas de madeira e produtos derivados, atendendo clientes em diversas regiões do Brasil e exterior. A empresa mantém o compromisso com a excelência, investindo continuamente em tecnologia, processos produtivos e qualificação de seus colaboradores.
+              Atualmente, a Portas Alvorada e Portábelly é reconhecida pela fabricação de portas de madeira e produtos derivados, atendendo clientes em diversas regiões do Brasil e exterior. A empresa mantém o compromisso com a excelência, investindo continuamente em tecnologia, processos produtivos e qualificação de seus colaboradores.
             </p>
 
             <p className="narrative-paragraph">
@@ -109,13 +109,13 @@ export default function AboutPage() {
             </p>
 
             <p className="narrative-paragraph">
-              <strong>PORTABELLY – De portas abertas para o futuro.</strong>
+              <strong>Portábelly – De portas abertas para o futuro.</strong>
             </p>
           </div>
 
           <div className="narrative-graphics-col reveal reveal-fade-in-right">
             <div className="graphics-collage-wrapper">
-              <img src="/images/laminated-door.png" alt="Maquinário PortáBelly" className="collage-img-large" />
+              <img src="/images/laminated-door.png" alt="Maquinário Portábelly" className="collage-img-large" />
               <div className="heritage-badge">
                 <span className="badge-num">1968</span>
                 <span className="badge-txt">Ano de Fundação</span>
@@ -172,7 +172,7 @@ export default function AboutPage() {
                       <div className="modern-img-wrapper">
                         <img 
                           src={milestone.image} 
-                          alt={`PortáBelly ${milestone.year}`} 
+                          alt={`Portábelly ${milestone.year}`} 
                           className="modern-img" 
                         />
                       </div>
