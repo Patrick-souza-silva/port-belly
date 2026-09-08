@@ -196,21 +196,22 @@ export default function InstagramFeed() {
                         loading="lazy"
                       />
                       <div className="insta-post-overlay">
-                        <div className="insta-overlay-content">
-                          <div className="insta-overlay-metrics">
-                            <span className="insta-metric">
-                              <Heart size={18} fill="var(--text-white)" /> {post.likes}
-                            </span>
-                            <span className="insta-metric">
-                              <MessageCircle size={18} fill="var(--text-white)" /> {post.comments}
-                            </span>
-                          </div>
-                          <p className="insta-overlay-caption">{post.caption}</p>
-                          <div className="insta-overlay-badge">
-                            <InstagramIcon size={14} />
-                            <span>Ver no Instagram</span>
-                          </div>
+                        <div className="insta-overlay-top-right">
+                          <InstagramIcon size={20} />
                         </div>
+                        
+                        <div className="insta-overlay-metrics">
+                          <span className="insta-metric">
+                            <Heart size={24} fill="var(--text-white)" /> 
+                            <strong>{post.likes}</strong>
+                          </span>
+                          <span className="insta-metric">
+                            <MessageCircle size={24} fill="var(--text-white)" /> 
+                            <strong>{post.comments}</strong>
+                          </span>
+                        </div>
+                        
+                        <p className="insta-overlay-caption">{post.caption}</p>
                       </div>
                     </div>
                   </a>
@@ -401,15 +402,13 @@ export default function InstagramFeed() {
         .insta-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 2rem;
+          gap: 0.75rem;
         }
 
         .insta-post-card {
           display: block;
-          border-radius: var(--radius-lg);
+          border-radius: var(--radius-sm);
           overflow: hidden;
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--border-light);
           position: relative;
           background-color: var(--bg-light);
           aspect-ratio: 1 / 1;
@@ -435,14 +434,15 @@ export default function InstagramFeed() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(81, 1, 1, 0.9);
-          backdrop-filter: blur(8px);
+          background: rgba(0, 0, 0, 0.55);
+          backdrop-filter: blur(1px);
           opacity: 0;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 2.25rem;
-          transition: opacity 0.4s ease;
+          padding: 1.5rem;
+          transition: opacity 0.3s ease;
           box-sizing: border-box;
         }
 
@@ -451,23 +451,28 @@ export default function InstagramFeed() {
         }
 
         .insta-post-card:hover .insta-post-img {
-          transform: scale(1.08);
+          transform: scale(1.05);
         }
 
-        .insta-overlay-content {
-          text-align: center;
+        .insta-overlay-top-right {
+          position: absolute;
+          top: 0.8rem;
+          right: 0.8rem;
           color: var(--text-white);
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1.25rem;
-          width: 100%;
+          opacity: 0.9;
         }
 
         .insta-overlay-metrics {
           display: flex;
-          gap: 2rem;
+          gap: 1.75rem;
           justify-content: center;
+          align-items: center;
+          transform: translateY(10px);
+          transition: transform 0.3s ease;
+        }
+
+        .insta-post-card:hover .insta-overlay-metrics {
+          transform: translateY(0);
         }
 
         .insta-metric {
@@ -475,42 +480,37 @@ export default function InstagramFeed() {
           align-items: center;
           gap: 0.5rem;
           font-family: var(--font-secondary);
+          font-size: 1.25rem;
+          color: var(--text-white);
+        }
+        
+        .insta-metric strong {
           font-weight: 700;
-          font-size: 1.05rem;
         }
 
         .insta-overlay-caption {
-          font-size: 0.88rem;
-          line-height: 1.6;
-          color: var(--text-light-muted);
+          position: absolute;
+          bottom: 1.5rem;
+          left: 1.5rem;
+          right: 1.5rem;
+          font-size: 0.85rem;
+          line-height: 1.5;
+          color: rgba(255, 255, 255, 0.95);
           margin: 0;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
+          text-align: center;
+          transform: translateY(10px);
+          opacity: 0;
+          transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
         }
 
-        .insta-overlay-badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          border: 1px solid rgba(197, 160, 89, 0.4);
-          background-color: rgba(197, 160, 89, 0.15);
-          color: var(--accent-gold-light);
-          padding: 0.4rem 1rem;
-          border-radius: var(--radius-sm);
-          font-size: 0.75rem;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          transition: var(--transition-fast);
-        }
-
-        .insta-post-card:hover .insta-overlay-badge:hover {
-          background-color: var(--accent-gold);
-          color: var(--primary-dark);
-          border-color: var(--accent-gold);
+        .insta-post-card:hover .insta-overlay-caption {
+          transform: translateY(0);
+          opacity: 1;
         }
 
         .insta-grid-tip {
