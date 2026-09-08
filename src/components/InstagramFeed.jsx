@@ -67,51 +67,51 @@ export default function InstagramFeed() {
   const mockPosts = [
     {
       id: 1,
-      image: "/images/door-production-1.jpeg",
-      likes: 142,
-      comments: 18,
-      caption: "Precisão industrial aliada à tradição secular de mais de 55 anos no Sudoeste do Paraná. 🪵💼",
-      link: "https://www.instagram.com/portabellyportas"
+      image: "/images/6.jpg",
+      likes: 342,
+      comments: 28,
+      caption: "Qualidade e sofisticação em cada detalhe. Conheça as opções Portábelly para o seu projeto. 🪵💼",
+      link: "https://www.instagram.com/p/DbbR8buvceQ/?igsi=NXBpN2swYWJ0bWs3"
     },
     {
       id: 2,
-      image: "/images/laminated-door.png",
+      image: "/images/5.jpg",
       likes: 218,
-      comments: 32,
-      caption: "Sofisticação intemporal: Linha Belíssima Laminada em Curupixá natural. Design que transforma ambientes. ✨🚪",
-      link: "https://www.instagram.com/portabellyportas"
+      comments: 15,
+      caption: "Transformando ambientes com a elegância da madeira natural. Tradição e inovação em cada peça. ✨🚪",
+      link: "https://www.instagram.com/p/DbY3auCjJ-u/?igsi=ZzQzOGI4M2loeWlv"
     },
     {
       id: 3,
-      image: "/images/door-production-2.jpeg",
-      likes: 164,
+      image: "/images/4.jpg",
+      likes: 194,
       comments: 21,
-      caption: "Bastidores da fábrica: controle de qualidade rigoroso e secagem milimétrica de nossas peças. 🏭📏",
-      link: "https://www.instagram.com/portabellyportas"
+      caption: "Mais do que portas, entregamos design, requinte e segurança para o seu lar. 🏭📏",
+      link: "https://www.instagram.com/p/DbEW-pCvHVd/?igsi=MXAwYjc1bTZndmVvZw=="
     },
     {
       id: 4,
-      image: "/images/solid-wood-door.png",
-      likes: 305,
+      image: "/images/2.jpg",
+      likes: 405,
       comments: 47,
-      caption: "A imponência e a segurança de uma porta maciça legítima Portábelly. Luxo e durabilidade incomparáveis. 🛡️🏠",
-      link: "https://www.instagram.com/portabellyportas"
+      caption: "A imponência de uma porta Portábelly. Luxo e durabilidade incomparáveis para quem exige o melhor. 🛡️🏠",
+      link: "https://www.instagram.com/p/DYqPryGgBZz/?igsi=aTJ5bDhqdWtxcHY5"
     },
     {
       id: 5,
-      image: "/images/door-production-3.jpeg",
-      likes: 198,
+      image: "/images/3.jpg",
+      likes: 298,
       comments: 29,
-      caption: "Nosso DNA é a perfeição. Cada detalhe das nossas portas é trabalhado com a paixão que herdamos desde 1968. ❤️🔨",
-      link: "https://www.instagram.com/portabellyportas"
+      caption: "Nosso DNA é a perfeição. Requinte e durabilidade que atravessam gerações. ❤️🔨",
+      link: "https://www.instagram.com/p/DaohS4SAmFd/?igsi=Z3J3aWd6empxYm9j"
     },
     {
       id: 6,
-      image: "/images/door-kit.png",
-      likes: 253,
+      image: "/images/Sem título.jpg",
+      likes: 353,
       comments: 38,
-      caption: "Praticidade absoluta e instalação rápida com o nosso Kit Porta Pronta. Completo de fábrica para a sua obra! 📦⚙️",
-      link: "https://www.instagram.com/portabellyportas"
+      caption: "Detalhes que fazem toda a diferença na arquitetura e decoração de interiores. Descubra nossas linhas! 📦⚙️",
+      link: "https://www.instagram.com/p/DaBP1OGvbBm/?igsi=MXUzMm9zMm9mZmx0OA%3D%3D&wa_status_inline=true"
     }
   ];
 
@@ -216,12 +216,7 @@ export default function InstagramFeed() {
                   </a>
                 ))}
               </div>
-              <div className="insta-grid-tip">
-                <span className="tip-dot"></span>
-                <p>
-                  <strong>Dica de Integração:</strong> Este é o nosso Feed Premium otimizado. Para alternar para o seu widget dinâmico automático (como LightWidget ou Elfsight), siga as instruções simples contidas nos comentários do arquivo <code>InstagramFeed.jsx</code>.
-                </p>
-              </div>
+
             </div>
           )}
 
