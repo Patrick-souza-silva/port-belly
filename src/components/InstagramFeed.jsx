@@ -70,7 +70,7 @@ export default function InstagramFeed() {
       image: "/images/6.jpg",
       likes: 342,
       comments: 28,
-      caption: "Qualidade e sofisticação em cada detalhe. Conheça as opções Portábelly para o seu projeto. 🪵💼",
+      caption: <>Qualidade e sofisticação em cada detalhe. Conheça as opções Portábell<span className="brand-y">y</span> para o seu projeto. 🪵💼</>,
       link: "https://www.instagram.com/p/DbbR8buvceQ/?igsi=NXBpN2swYWJ0bWs3"
     },
     {
@@ -94,7 +94,7 @@ export default function InstagramFeed() {
       image: "/images/2.jpg",
       likes: 405,
       comments: 47,
-      caption: "A imponência de uma porta Portábelly. Luxo e durabilidade incomparáveis para quem exige o melhor. 🛡️🏠",
+      caption: <>A imponência de uma porta Portábell<span className="brand-y">y</span>. Luxo e durabilidade incomparáveis para quem exige o melhor. 🛡️🏠</>,
       link: "https://www.instagram.com/p/DYqPryGgBZz/?igsi=aTJ5bDhqdWtxcHY5"
     },
     {
@@ -125,7 +125,7 @@ export default function InstagramFeed() {
             <Sparkles size={14} className="insta-badge-icon" />
             <span>Conexão Digital</span>
           </div>
-          <h2 className="insta-title">Acompanhe a <span className="brand-name">Portábelly</span> no Instagram</h2>
+          <h2 className="insta-title">Acompanhe a <span className="brand-name">Portábell<span className="brand-y">y</span></span> no Instagram</h2>
           <div className="insta-divider"></div>
           <p className="insta-subtitle">
             Fique por dentro dos nossos lançamentos, linhas de produtos, novidades da fábrica e conteúdos exclusivos para revendas, distribuidores e parceiros comerciais.

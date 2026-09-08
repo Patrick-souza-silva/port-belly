@@ -1,6 +1,16 @@
 @import url('https://fonts.cdnfonts.com/css/walkway');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap');
 
+/* "Gambiarra" elegante para usar o 'y' reto/geométrico do Montserrat, mantendo o Walkway para as outras letras */
+@font-face {
+  font-family: 'MontserratY';
+  font-style: normal;
+  font-weight: 100 900; /* Cobre do texto normal até o super negrito */
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0079, U+0059; /* Apenas as letras 'y' minúsculo e 'Y' maiúsculo */
+}
+
 @font-face {
   font-family: 'Walkway';
   src: url('/fonts/walkway/Walkway Bold.ttf') format('truetype');
@@ -9,14 +19,18 @@
 }
 
 .font-walkway {
-  font-family: 'Walkway', sans-serif !important;
+  font-family: 'MontserratY', 'Walkway', sans-serif !important;
   font-weight: normal !important;
 }
 
 .brand-name {
-  font-family: 'Walkway', sans-serif !important;
+  font-family: 'MontserratY', 'Walkway', sans-serif !important;
   font-weight: normal !important;
   letter-spacing: 0.5px;
+}
+
+.brand-y {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 /* --- Brand Typography Design Tokens --- */
@@ -48,8 +62,8 @@
   --glass-shadow: rgba(0, 0, 0, 0.04) 0px 8px 32px 0px;
 
   /* Font Families */
-  --font-primary: 'Walkway', sans-serif;
-  --font-secondary: 'Walkway', sans-serif;
+  --font-primary: 'MontserratY', 'Walkway', sans-serif;
+  --font-secondary: 'MontserratY', 'Walkway', sans-serif;
 
   /* Layout and Spacing */
   --max-width: 1280px;
